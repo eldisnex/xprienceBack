@@ -13,4 +13,8 @@
     <SourceRoot Include="C:\Users\48674459\.nuget\packages\" />
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)sixlabors.imagesharp\3.1.5\build\SixLabors.ImageSharp.props" Condition="Exists('$(NuGetPackageRoot)sixlabors.imagesharp\3.1.5\build\SixLabors.ImageSharp.props')" />
+    <Import Project="$(NuGetPackageRoot)microsoft.ml.onnxruntime\1.18.1\build\netstandard2.1\Microsoft.ML.OnnxRuntime.props" Condition="Exists('$(NuGetPackageRoot)microsoft.ml.onnxruntime\1.18.1\build\netstandard2.1\Microsoft.ML.OnnxRuntime.props')" />
+  </ImportGroup>
 </Project>

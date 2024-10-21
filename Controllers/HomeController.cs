@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Xprience.Models;
+using Microsoft.Extensions.Logging;
 
 namespace Xprience.Controllers;
 
