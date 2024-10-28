@@ -30,6 +30,11 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult indexLogged(User user)
+    {
+        BD.SignUp(user);
+    }
+
     public IActionResult Inspiration()
     {
         return View();

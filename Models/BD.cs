@@ -5,7 +5,7 @@ public class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=Xprience ; Trusted_Connection=True ;";
 
-    public static void AgregarDeportista(User user)
+    public static void SignUp (User user)
     {
 
         using (SqlConnection db = new SqlConnection(_connectionString))
