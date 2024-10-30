@@ -65,6 +65,7 @@ public class HomeController : Controller
 
     public IActionResult Inspiration()
     {
+        ViewBag.Plans = BD.ListPlan();
         return View();
     }
 
@@ -80,6 +81,30 @@ public class HomeController : Controller
 
     public IActionResult CreatePlan()
     {
+        return View();
+    }
+
+    public IaActionResult CreatePlanGastronomy()
+    {
+        ViewBag.ButtonEnabled = true;
+        int i = 0;
+        if(i==1)
+        {
+            ViewBag.ButtonEnabled = false;
+        }
+        i ++;
+        return View();
+    }
+
+    public IaActionResult CreatePlanEntrtainment()
+    {
+        ViewBag.ButtonEnabled = true;
+        int i = 0
+        if(i==1)
+        {
+            ViewBag.ButtonEnabled = false;
+        }
+        i ++;
         return View();
     }
 
