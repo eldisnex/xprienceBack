@@ -20,19 +20,47 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Login()
+    public IActionResult Login(string nameMail)
     {
         return View();
     }
 
+    public IaActionResult GetLogin(string nameMail, string password)
+    {
+        ViewBag.User = BD.LogIn(nameMail, password);
+        if(ViewBag.User == null)
+        {
+            ViewBag.Error = "incorrect username or password";
+            return RedirecToAction ("Login");
+        }
+        else
+        {
+            return RedirecToAction ("indexLogged");
+        }
+    }
     public IActionResult Signup()
     {
         return View();
     }
 
-    public IActionResult indexLogged(User user)
+    public IActionResult GetSignup(string name, string mail, string password, string verifyPassword)
     {
-        BD.SignUp(user);
+        if(password == verifyPassword)
+        {
+            ViewBag.User = BD.SingUp(name, mail, password);
+            return RedirecToAction ("indexLogged");
+        }
+        else
+        {
+            ViewBag.Error = "invalid password";
+            return RedirecToAction ("Signup");
+        }
+
+    }
+
+    public IActionResult indexLogged()
+    {
+        return View();
     }
 
     public IActionResult Inspiration()

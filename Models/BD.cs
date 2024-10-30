@@ -26,6 +26,24 @@ public class BD
         }
         return ListPlan;
     }
+    public static Void SingUp (string name, string mail, string password)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)"; 
+            db.Execute(sql, new { pName = name, pMail = mail, pPassword = password});
+        }
+    }
 
+    public static User LogIn (string nameMail, string password)
+    {
+        User NameMail = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM User WHERE name = @pNameMail or mail = @pNameMail AND password = @pPassword"; 
+            NameMail = db.QueryFirstOrDefault<User>(sql, new { pNameMail = nameMail, pPassword = password });
+        }
+        return NameMail;
+    }
 
 }
