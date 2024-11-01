@@ -25,17 +25,17 @@ public class HomeController : Controller
         return View();
     }
 
-    public IaActionResult GetLogin(string nameMail, string password)
+    public IActionResult GetLogin(string nameMail, string password)
     {
         ViewBag.User = BD.LogIn(nameMail, password);
         if(ViewBag.User == null)
         {
             ViewBag.Error = "incorrect username or password";
-            return RedirecToAction ("Login");
+            return RedirectToAction ("Login");
         }
         else
         {
-            return RedirecToAction ("indexLogged");
+            return RedirectToAction ("indexLogged");
         }
     }
     public IActionResult Signup()
@@ -48,12 +48,12 @@ public class HomeController : Controller
         if(password == verifyPassword)
         {
             ViewBag.User = BD.SingUp(name, mail, password);
-            return RedirecToAction ("indexLogged");
+            return RedirectToAction ("indexLogged");
         }
         else
         {
             ViewBag.Error = "invalid password";
-            return RedirecToAction ("Signup");
+            return RedirectToAction ("Signup");
         }
 
     }
@@ -84,7 +84,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IaActionResult CreatePlanGastronomy()
+    public IActionResult CreatePlanGastronomy()
     {
         ViewBag.ButtonEnabled = true;
         int i = 0;
@@ -96,10 +96,10 @@ public class HomeController : Controller
         return View();
     }
 
-    public IaActionResult CreatePlanEntrtainment()
+    public IActionResult CreatePlanEntrtainment()
     {
         ViewBag.ButtonEnabled = true;
-        int i = 0
+        int i = 0;
         if(i==1)
         {
             ViewBag.ButtonEnabled = false;

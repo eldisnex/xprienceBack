@@ -1,4 +1,4 @@
-class Plan
+public class Plan
 {
     public int IdPlan {get; set;}
     public string nombre {get; set;}    

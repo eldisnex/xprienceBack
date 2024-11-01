@@ -1,7 +1,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using Dapper;
-public class BD
+public static class BD
 {
     private static string _connectionString = @"Server=localhost; DataBase=Xprience ; Trusted_Connection=True ;";
 
@@ -11,18 +11,21 @@ public class BD
         List<Plan> ListPlan = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-        string sql = "SELECT * FROM Plan";
-        ListPlan = db.Query<Plan>(sql).ToList();
+            string sql = "SELECT * FROM Plan";
+            ListPlan = db.Query<Plan>(sql).ToList();
         }
         return ListPlan;
     }
-    public static Void SingUp (string name, string mail, string password)
+    public static User SingUp (string name, string mail, string password)
     {
+        User nuevoUser = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)"; 
-            db.Execute(sql, new { pName = name, pMail = mail, pPassword = password});
+            nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password});
         }
+
+        return nuevoUser;
     }
 
     public static User LogIn (string nameMail, string password)
