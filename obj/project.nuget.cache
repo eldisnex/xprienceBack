@@ -1,57 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "w2TgJLAP06No2NLSgf1nN/WgDiC8UZYqkk/yc9ldrjPXJ36Okh0rAk/kvWjp6KE6WlnKSurv9ynmzZwdwLhvzA==",
+  "dgSpecHash": "GbDHdhRB+ktFktTzGcmkeDHwYA+mfeOTk/9/lRyOwQUqFQZ7Gbk0o4bfDB5bVTuze1Pe1/Qac2p0G90jw7gO+g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48674459\\Downloads\\xprienceBack\\Xprience.csproj",
+  "projectFilePath": "C:\\Users\\48179712\\Downloads\\r3r43\\Xprience.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\48674459\\.nuget\\packages\\aspose.barcode\\24.10.0\\aspose.barcode.24.10.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\aspose.drawing.common\\24.6.0\\aspose.drawing.common.24.6.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\barcode\\2024.10.10\\barcode.2024.10.10.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\barcode.slim\\2024.10.10\\barcode.slim.2024.10.10.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\bitmiracle.libtiff.net\\2.4.649\\bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\ironsoftware.common\\2024.9.38\\ironsoftware.common.2024.9.38.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\ironsoftware.system.drawing\\2024.9.15\\ironsoftware.system.drawing.2024.9.15.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.0\\microsoft.extensions.configuration.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.configuration.binder\\6.0.0\\microsoft.extensions.configuration.binder.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.0\\microsoft.extensions.configuration.fileextensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.configuration.json\\6.0.0\\microsoft.extensions.configuration.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\6.0.0\\microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.fileproviders.physical\\6.0.0\\microsoft.extensions.fileproviders.physical.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.filesystemglobbing\\6.0.0\\microsoft.extensions.filesystemglobbing.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.ml.onnxruntime\\1.18.1\\microsoft.ml.onnxruntime.1.18.1.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.ml.onnxruntime.managed\\1.18.1\\microsoft.ml.onnxruntime.managed.1.18.1.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\microsoft.win32.systemevents\\8.0.0\\microsoft.win32.systemevents.8.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\qrcode.net\\0.4.0\\qrcode.net.0.4.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\sixlabors.fonts\\2.0.4\\sixlabors.fonts.2.0.4.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\sixlabors.imagesharp\\3.1.5\\sixlabors.imagesharp.3.1.5.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\sixlabors.imagesharp.drawing\\2.1.4\\sixlabors.imagesharp.drawing.2.1.4.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.configuration.configurationmanager\\6.0.0\\system.configuration.configurationmanager.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.drawing.common\\8.0.10\\system.drawing.common.8.0.10.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.memory\\4.5.5\\system.memory.4.5.5.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.security.accesscontrol\\6.0.0\\system.security.accesscontrol.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.security.cryptography.protecteddata\\6.0.0\\system.security.cryptography.protecteddata.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.security.permissions\\6.0.0\\system.security.permissions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.text.encoding.codepages\\8.0.0\\system.text.encoding.codepages.8.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.text.encodings.web\\6.0.0\\system.text.encodings.web.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.text.json\\6.0.0\\system.text.json.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\system.windows.extensions\\6.0.0\\system.windows.extensions.6.0.0.nupkg.sha512",
-    "C:\\Users\\48674459\\.nuget\\packages\\zxing.net\\0.16.9\\zxing.net.0.16.9.nupkg.sha512"
+    "C:\\Users\\48179712\\.nuget\\packages\\qrcoder\\1.6.0\\qrcoder.1.6.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "El paquete \"QrCode.Net 0.4.0\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
-      "libraryId": "QrCode.Net",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  "logs": []
 }
