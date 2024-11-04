@@ -1,0 +1,183 @@
+body {
+    background: linear-gradient(to bottom, var(--colorX) 50%, white 50%);
+    height: 100dvh;
+    overflow: hidden;
+ }
+ 
+ #wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0;
+    width: var(--pageW);
+    height: 80%;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius1);
+    padding: 50px;
+    box-sizing: border-box;
+ }
+ 
+ input {
+    all: unset;
+ }
+ 
+ h1 {
+    font-size: 70px;
+    text-align: center;
+ }
+ 
+ label {
+    color: #00000080;
+    font-size: small;
+ }
+ 
+ .inputGroup,
+ input[type='submit'] {
+    margin: 20px;
+    position: relative;
+ }
+ 
+ input[type='text'],
+ input[type='password'] {
+    background-color: var(--color1);
+    border-radius: 2px;
+    padding: 10px;
+    width: 300px;
+    /* border: 1px solid #00000020; */
+ }
+ 
+ input[type='text']:focus,
+ input[type='password']:focus {
+    background-color: #edf0f5;
+ }
+ 
+ #eye + label {
+    background-image: url('../img/svg/eye.svg');
+    transition: background-image 0.2s;
+ }
+ 
+ #eye:checked + label {
+    background-image: url('../img/svg/eyeNoSee.svg');
+ }
+ 
+ #password,#verifyPassword {
+    -webkit-text-security: disc;
+ }
+ 
+ #eye:checked ~ #password {
+    -webkit-text-security: none;
+ }
+
+ .inputGroup:has(#eye:checked) ~ .rPassword #verifyPassword{
+   -webkit-text-security: none;
+ }
+ 
+ label[for='eye'] {
+    display: block;
+    position: absolute;
+    top: 50%;
+    translate: -50%;
+    right: 0;
+    width: 24px;
+    height: 24px;
+ }
+ 
+ input[type='submit'] {
+    background-color: var(--colorX);
+    border-radius: var(--radius2);
+    box-shadow: var(--shadow);
+    width: 320px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 900;
+    font-size: 1.5em;
+    text-align: center;
+    transition: 0.3s;
+ }
+ 
+ input[type='submit']:hover {
+    filter: brightness(0.9);
+ }
+ 
+ .info {
+    text-align: center;
+ }
+ 
+ .status {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+ }
+ 
+ .statusItem {
+    height: 5px;
+    width: 100px;
+    background-color: var(--color1);
+ }
+ 
+ .statusItem.marked {
+    background-color: var(--colorX);
+ }
+ 
+ .slide {
+    width: 500px;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+ }
+ 
+ .carrousel {
+    display: flex;
+    animation: scroll 10s linear infinite;
+    width: calc(500px * 3);
+ }
+ 
+ .carrouselItem {
+    width: 500px;
+ }
+ 
+ @keyframes scroll {
+    0% {
+       transform: translateX(0);
+    }
+    25% {
+       transform: translateX(0);
+    }
+    33% {
+       transform: translateX(-500px);
+    }
+    58% {
+       transform: translateX(-500px);
+    }
+    66% {
+       transform: translateX(-1000px);
+    }
+    92% {
+       transform: translateX(-1000px);
+    }
+    100% {
+       transform: translateX(0);
+    }
+ }
+ 
+ @keyframes changeMarked {
+    0% {
+       background-color: var(--colorX);
+    }
+    32% {
+       background-color: var(--colorX);
+    }
+    33% {
+       background-color: var(--color1);
+    }
+ }

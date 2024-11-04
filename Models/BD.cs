@@ -16,27 +16,40 @@ public static class BD
         }
         return ListPlan;
     }
-    public static User SingUp (string name, string mail, string password)
+    public static User SingUp(string name, string mail, string password)
     {
         User nuevoUser = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)"; 
-            nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password});
+            string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)";
+            nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password });
         }
 
         return nuevoUser;
     }
 
-    public static User LogIn (string nameMail, string password)
+    public static User LogIn(string nameMail, string password)
     {
         User NameMail = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM User WHERE name = @pNameMail or mail = @pNameMail AND password = @pPassword"; 
+            string sql = "SELECT * FROM User WHERE name = @pNameMail or mail = @pNameMail AND password = @pPassword";
             NameMail = db.QueryFirstOrDefault<User>(sql, new { pNameMail = nameMail, pPassword = password });
         }
         return NameMail;
     }
+
+    // public static Bool UserExist (string name, string mail, string password)
+    // {
+    //     Bool exist = null;
+    //     using (SqlConnection db = new SqlConnection(_connectionString))
+    //     {
+    //         string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)"; 
+    //         nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password});
+    //     }
+
+    //     return exist;
+    // }
+
 
 }

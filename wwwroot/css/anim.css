@@ -1,0 +1,98 @@
+:root {
+   --delay: 2s;
+}
+
+body {
+   margin: 0;
+   /* overflow: hidden; */
+}
+
+#anim {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   background-color: black;
+   color: white;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   animation: dissappear2 var(--delay) forwards;
+}
+
+#anim .black {
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 35%;
+   height: 100%;
+   background-color: black;
+   animation: dissappear calc(var(--delay) * 0.6) forwards;
+}
+
+#anim h1 {
+   font-size: 6em;
+   font-family: 100em;
+}
+
+#anim h1:first-child {
+   position: relative;
+   background-color: black;
+   animation: scalation var(--delay) forwards;
+}
+
+#anim h1:nth-child(2) {
+   /* color: blue; */
+   position: relative;
+   animation: moveRight calc(var(--delay) * 0.6) forwards;
+}
+
+@keyframes moveRight {
+   0% {
+      left: 0;
+   }
+   80% {
+      left: 0;
+   }
+   99% {
+      color: unset;
+   }
+   100% {
+      left: 5em;
+      color: transparent;
+   }
+}
+
+@keyframes dissappear {
+   80% {
+      display: initial;
+   }
+   100% {
+      display: none;
+   }
+}
+
+@keyframes scalation {
+   0% {
+      scale: 1;
+      left: 0;
+   }
+   50% {
+      left: 0;
+   }
+   60% {
+      left: 2em;
+      scale: 1;
+   }
+   100% {
+      scale: 250;
+   }
+}
+
+@keyframes dissappear2 {
+   99% {
+      display: flex;
+   }
+   100% {
+      display: none;
+   }
+}
