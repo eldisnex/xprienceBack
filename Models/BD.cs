@@ -22,7 +22,19 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)";
-            nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password });
+            int i = db.Execute(sql, new { pName = name, pMail = mail, pPassword = password });
+
+        
+            /*if (rowsAffected > 0)
+            {
+            
+                nuevoUser = new User
+                {
+                    name = name,
+                    mail = mail,
+                    password = password
+                };
+            }*/
         }
 
         return nuevoUser;
@@ -39,17 +51,21 @@ public static class BD
         return NameMail;
     }
 
-    // public static Bool UserExist (string name, string mail, string password)
-    // {
-    //     Bool exist = null;
-    //     using (SqlConnection db = new SqlConnection(_connectionString))
-    //     {
-    //         string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)"; 
-    //         nuevoUser = db.QueryFirstOrDefault(sql, new { pName = name, pMail = mail, pPassword = password});
-    //     }
+    public static bool UserExist (string name, string mail, string password)
+    {
+        bool exist = false;
+        User userExist = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM [User] WHERE name = @pName AND mail = @pMail AND password = @pPassword"; 
+            userExist = db.QueryFirstOrDefault<User>(sql, new { pName = name, pMail = mail, pPassword = password });
+        }
+        if (userExist != null){
+            exist = true;
+        }
 
-    //     return exist;
-    // }
+        return exist;
+    }
 
 
 }

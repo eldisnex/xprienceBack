@@ -48,6 +48,7 @@ public class HomeController : Controller
     [Route("/Home/SignUp")]
     public IActionResult SignUp()
     {
+        ViewBag.a = false;
         // Response.Cookies.Delete("UserId");
         // Response.Cookies.Append("UserId", "12345");
         // Checkear si existe
@@ -60,27 +61,33 @@ public class HomeController : Controller
     [HttpPost]
     public IActionResult GetSignup(string name, string mail, string password, string verifyPassword)
     {
+        ViewBag.a = false;
         if (password == verifyPassword)
         {
             string hashedPassword = Functions.HashString(password);
             // Si esta todo bien
             Response.Cookies.Append("UserId", "12345");
 
-            // if(!BD.UserExist(name, mail, password)){
-            //     ViewBag.User = BD.SingUp(name, mail, password);
-            //     return RedirectToAction("indexLogged");
-            // }
-            // else{
-            //     ViewBag.Error = "invalid password";
-            //     return RedirectToAction("Signup");
-            // }
+            if(!BD.UserExist(name, mail, password))
+            {
+                ViewBag.User = BD.SingUp(name, mail, password);
+                return RedirectToAction("indexLogged");
+            }
+            else
+            {
+                ViewBag.a = true;
+                ViewBag.Error = "User already exist";
+                return RedirectToAction("Signup");
+            }
 
         }
         else
         {
+            ViewBag.a = true;
             ViewBag.Error = "invalid password";
+            return RedirectToAction("Signup");
         }
-        return RedirectToAction("Signup");
+       
     }
 
     public IActionResult indexLogged()

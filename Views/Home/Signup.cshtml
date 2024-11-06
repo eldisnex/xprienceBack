@@ -2,6 +2,10 @@
    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
             <div>
+               @if(ViewBag.a){
+                  <h3>@ViewBag.Error</h3>
+               }
+               
                <h1>Sign up</h1>
                <form action = '@Url.Action("GetSignup")' method="POST">
                <div class="inputGroup">
