@@ -1,0 +1,227 @@
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=search" />
+<link rel="stylesheet" href="~/css/filters.css" />
+<section class="block create">
+    <form action="index.html">
+        <h1 class="createTitle">Gastronomy</h1>
+        <div class="input-group">
+            <label for="submit" class="searchButton">
+                Search
+                <span class="material-symbols-outlined">
+                    search
+                </span></label>
+            <input type="text" name="query" class="largeInput" placeholder="Insert text..." />
+        </div>
+        <div class="filters">
+            <div class="filter-group">
+                <div class="input-group">
+                    <span>$</span>
+                    <input type="number" name="min" placeholder="Minimum" min="0" aria-label="Minimum price" />
+                </div>
+                <div class="input-group">
+                    <span>$</span>
+                    <input type="number" name="max" placeholder="Maximum" min="0" aria-label="Maximum price" />
+                </div>
+                <div class="input-group">
+                    <select aria-label="Select zone" name="zone">
+                        <option value="">Zone</option>
+                        <option value="zone1">Zone 1</option>
+                        <option value="zone2">Zone 2</option>
+                        <option value="zone3">Zone 3</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select aria-label="Select type of activity" name="activity">
+                        <option value="">Type of activity</option>
+                        <option value="activity1">Activity 1</option>
+                        <option value="activity2">Activity 2</option>
+                        <option value="activity3">Activity 3</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <select aria-label="Select duration" name="duration">
+                        <option value="">Duration</option>
+                        <option value="1h">1 hour</option>
+                        <option value="2h">2 hours</option>
+                        <option value="3h">3 hours</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <input type="submit" value="Search" id="submit" hidden />
+    </form>
+</section>
+<div class="cardContainerFlex">
+    <template id="subCardTemplate">
+        <div class="subCard">
+            <div class="card">
+                <div class="coverImage">
+                </div>
+                <img src="img/rollerCoaster.jfif" alt="" class="img" />
+                <div class="row">
+                    <h3>Title</h3>
+                    <span class="stars">4.7</span>
+                </div>
+                <p class="desc">The coffee with the best dedication.</p>
+                <div class="row">
+                    <p class="people">For 2 people</p>
+                    <button>
+                        <img src="img/bookmark.svg" alt="Save" />
+                    </button>
+                </div>
+            </div>
+            <button class="button small">Add</button>
+        </div>
+    </template>
+    @*
+    <div class="subCard">
+    <div class="card">
+    <div class="coverImage">
+    </div>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKuEq5GMMsLCRuDE7De_r9IbUp-cD7qMW94Q&s"
+    alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div>
+    <div class="subCard">
+    <div class="card">
+    <img src="" alt="" />
+    <div class="row">
+    <h3>Title</h3>
+    <span class="stars">4.7</span>
+    </div>
+    <p class="desc">The coffee with the best dedication.</p>
+    <div class="row">
+    <p class="people">For 2 people</p>
+    <button>
+    <img src="img/bookmark.svg" alt="Save" />
+    </button>
+    </div>
+    </div>
+    <button class="button small">Add</button>
+    </div> *@
+</div>
+<div class="pathButtons">
+    <a href="" class="button">Back</a>
+    <a href="" class="button">Next</a>
+</div>
+<script>
+    const handleCreateUrl = '@Url.Action("HandleCreate")'
+    const handleImage = '@Url.Action("HandleImage")'
+</script>
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="~/js/handleCreateForm.js"></script>

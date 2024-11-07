@@ -8,7 +8,9 @@
 
   <ItemGroup>
     <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="jobject" Version="1.0.0" />
     <PackageReference Include="QRCoder" Version="1.6.0" />
+    <PackageReference Include="RestSharp" Version="112.1.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
   </ItemGroup>
 
