@@ -347,8 +347,18 @@ navigator.geolocation.getCurrentPosition((position) => {
    options.longitude = position.coords.longitude;
 });
 
+if (!options.latitude) {
+   options.latitude = -34.6019627;
+}
+if (!options.longitude) {
+   options.longitude = -58.4286208;
+}
 const onSent = (e) => {
    e.preventDefault();
+   document
+      .querySelectorAll('.cardContainerFlex > div')
+      .forEach((e) => e.remove());
+   $('#closeBlock').prop('checked', true);
    console.log(e.target);
    let formdata = new FormData(e.target);
    console.log(formdata);
@@ -372,7 +382,9 @@ const createCard = (item) => {
    const clone = document.importNode(template, true);
    $.post(handleImage, { id: item.fsq_id })
       .then((res) => JSON.parse(res))
-      .then((res) => (item.img = res[0].prefix + 'original' + res[0].suffix))
+      .then((res) => {
+         if (res[0]) item.img = res[0].prefix + 'original' + res[0].suffix;
+      })
       .then(() => {
          clone.querySelector('img').src = item.img;
          clone.querySelector('.coverImage').textContent = item.name;
@@ -381,7 +393,9 @@ const createCard = (item) => {
          clone.querySelector('.stars').textContent = '4.5';
          clone.querySelector('.people').textContent = 'For 2 people';
          $('.cardContainerFlex').append(clone);
+         console.log('Creado');
+      })
+      .catch((err) => {
+         console.log(err);
       });
 };
-
-createCard();

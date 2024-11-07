@@ -643,36 +643,24 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
     "C:\\Users\\48674459\\.nuget\\packages\\": {}
-=======
-    "C:\\Users\\ulest\\.nuget\\packages\\": {}
->>>>>>> api
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj",
+      "projectUniqueName": "C:\\Users\\48674459\\Downloads\\xprienceBack\\Xprience.csproj",
       "projectName": "Xprience",
-      "projectPath": "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj",
-      "packagesPath": "C:\\Users\\ulest\\.nuget\\packages\\",
-      "outputPath": "D:\\Uriel\\Descargas\\xprienceBack\\obj\\",
+      "projectPath": "C:\\Users\\48674459\\Downloads\\xprienceBack\\Xprience.csproj",
+      "packagesPath": "C:\\Users\\48674459\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\48674459\\Downloads\\xprienceBack\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-<<<<<<< HEAD
         "C:\\Users\\48674459\\AppData\\Roaming\\NuGet\\NuGet.Config"
-=======
-        "C:\\Users\\ulest\\AppData\\Roaming\\NuGet\\NuGet.Config"
->>>>>>> api
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-<<<<<<< HEAD
-=======
-        "C:\\Program Files\\dotnet\\library-packs": {},
->>>>>>> api
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -736,11 +724,7 @@
             "privateAssets": "all"
           }
         },
-<<<<<<< HEAD
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
-=======
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
->>>>>>> api
       }
     }
   }

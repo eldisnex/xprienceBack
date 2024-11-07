@@ -13,11 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89ec15b42f7de910e3c10599da531327b60ba2d2")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+24a98eb05514ce46cf92dbd147e6f995dbfa6e37")]
->>>>>>> api
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+008719eb017d62304f8cb17d4c6370eb3a9d8ebf")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

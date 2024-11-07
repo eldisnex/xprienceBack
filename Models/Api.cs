@@ -16,6 +16,7 @@ public class Api
         RestClientOptions options = new RestClientOptions(baseUrl + $"search?ll={latitude},{longitude}&query={query}");
         RestClient client = new RestClient(options);
         var response = await client.GetAsync(request);
+        Console.WriteLine(response.Content);
         return response.Content;
     }
 
