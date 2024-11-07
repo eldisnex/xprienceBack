@@ -1,0 +1,99 @@
+:root {
+   --primary-color: #3498db;
+   --background-color: #f0f0f0;
+   --border-color: #dcdde1;
+   --text-color: #2d3436;
+   --placeholder-color: #7f8c8d;
+}
+
+.filters {
+   margin-top: 10px;
+   border-radius: 12px;
+   display: flex;
+   justify-content: space-between;
+}
+
+.filters .filter-group {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 15px;
+   align-items: center;
+}
+
+.input-group {
+   position: relative;
+}
+
+.filters .input-group span {
+   position: absolute;
+   left: 15px;
+   top: 50%;
+   transform: translateY(-50%);
+   color: var(--placeholder-color);
+   pointer-events: none;
+}
+
+.filters input,
+.filters select {
+   padding: 12px 15px;
+   border: 2px solid var(--border-color);
+   border-radius: 8px;
+   font-size: 16px;
+   transition: all 0.3s ease;
+   outline: none;
+   color: var(--text-color);
+}
+
+.filters input::placeholder {
+   color: var(--placeholder-color);
+}
+
+.filters input[type='number'] {
+   padding-left: 30px;
+   box-sizing: border-box;
+}
+
+.filters input:focus,
+.filters select:focus {
+   border-color: var(--primary-color);
+   box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.filters select {
+   appearance: none;
+   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%237f8c8d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+   background-repeat: no-repeat;
+   background-position: right 15px center;
+   background-size: 16px;
+   padding-right: 40px;
+}
+
+@media (max-width: 600px) {
+   .input-group {
+      flex: 1 1 100%;
+   }
+}
+
+.searchButton {
+   position: absolute;
+   right: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 100px;
+   background-color: var(--colorX);
+   padding: 10px;
+   color: white;
+   text-align: center;
+   border-radius: var(--radius2);
+   box-shadow: var(--shadow);
+   font-weight: 700;
+}
+
+.searchButton:hover {
+   filter: brightness(0.95);
+}
+
+.searchButton span {
+   font-size: 1em;
+   vertical-align: middle;
+}

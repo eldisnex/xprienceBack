@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.002.0
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xprience", "Xprience.csproj", "{106F37FC-5EBE-4204-A142-9D383E79E673}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xprience", "Xprience.csproj", "{5D14EA30-7BAA-432C-A752-310C6F388AE0}"
+>>>>>>> api
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +15,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{106F37FC-5EBE-4204-A142-9D383E79E673}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{106F37FC-5EBE-4204-A142-9D383E79E673}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{106F37FC-5EBE-4204-A142-9D383E79E673}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{106F37FC-5EBE-4204-A142-9D383E79E673}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{5D14EA30-7BAA-432C-A752-310C6F388AE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D14EA30-7BAA-432C-A752-310C6F388AE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D14EA30-7BAA-432C-A752-310C6F388AE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D14EA30-7BAA-432C-A752-310C6F388AE0}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> api
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<< HEAD
 		SolutionGuid = {9B8F374E-6B00-4B1F-ADE9-F86F36ED6487}
+=======
+		SolutionGuid = {E6F995ED-EFA4-4AAE-B4E7-CEC0056CA5E3}
+>>>>>>> api
 	EndGlobalSection
 EndGlobal

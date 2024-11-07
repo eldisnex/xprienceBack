@@ -111,9 +111,28 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult CreatePlan()
+    public IActionResult Create()
     {
+        Api a = new Api();
+        a.getImage("51d9202a498e44076324c5fc");
+        ViewBag.logged = true;
         return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> HandleCreate(string latitude, string longitude, string query)
+    {
+        Api api = new Api();
+        var r = await api.makeRequest(latitude, longitude, query);
+        return Json(r);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> HandleImage(string id)
+    {
+        Api api = new Api();
+        var r = await api.getImage(id);
+        return Json(r);
     }
 
     public IActionResult CreatePlanGastronomy()
