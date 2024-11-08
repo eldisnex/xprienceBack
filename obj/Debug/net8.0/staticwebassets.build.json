@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K6GqVRGr1hAlIR6pNoDgOBmdst+l8weFQmA9Q9MIEps=",
+  "Hash": "ILolLjRl1TyzPUAW//ci/mWqhXwOa8pzFCLVwSMMm8Q=",
   "Source": "Xprience",
   "BasePath": "_content/Xprience",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\logo.png"
+    },
+    {
+      "Identity": "C:\\Users\\48674459\\Downloads\\xprienceBack\\wwwroot\\img\\svg\\closeFullscreen.svg",
+      "SourceId": "Xprience",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\48674459\\Downloads\\xprienceBack\\wwwroot\\",
+      "BasePath": "_content/Xprience",
+      "RelativePath": "img/svg/closeFullscreen.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\svg\\closeFullscreen.svg"
     },
     {
       "Identity": "C:\\Users\\48674459\\Downloads\\xprienceBack\\wwwroot\\img\\svg\\eye.svg",

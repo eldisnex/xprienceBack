@@ -35,7 +35,7 @@ public class HomeController : Controller
         ViewBag.User = BD.LogIn(nameMail, password);
         if (ViewBag.User == null)
         {
-            ViewBag.Error = "incorrect username or password";
+            ViewBag["Error"] = "incorrect username or password";
             return RedirectToAction("Login");
         }
         else
@@ -48,46 +48,44 @@ public class HomeController : Controller
     [Route("/Home/SignUp")]
     public IActionResult SignUp()
     {
-        ViewBag.a = false;
+        // Console.WriteLine("Hola");
         // Response.Cookies.Delete("UserId");
         // Response.Cookies.Append("UserId", "12345");
         // Checkear si existe
         // string usuario = Request.Cookies["UserId"];
 
         // Console.WriteLine(usuario ?? "No hay usuario definido");
+        if (TempData.ContainsKey("Error"))
+            ViewData["Error"] = TempData["Error"].ToString();
         return View();
     }
 
     [HttpPost]
     public IActionResult GetSignup(string name, string mail, string password, string verifyPassword)
     {
-        ViewBag.a = false;
+        if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(mail) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(verifyPassword))
+        {
+            Console.WriteLine("Hola");
+            TempData["Error"] = "No se pasaron todos los parametros";
+            return RedirectToAction("SignUp");
+        }
         if (password == verifyPassword)
         {
             string hashedPassword = Functions.HashString(password);
             // Si esta todo bien
             Response.Cookies.Append("UserId", "12345");
 
-            if(!BD.UserExist(name, mail, password))
+            if (!BD.UserExist(name, mail, hashedPassword))
             {
-                ViewBag.User = BD.SingUp(name, mail, password);
+                ViewBag.User = BD.SignUp(name, mail, hashedPassword);
                 return RedirectToAction("indexLogged");
             }
-            else
-            {
-                ViewBag.a = true;
-                ViewBag.Error = "User already exist";
-                return RedirectToAction("Signup");
-            }
+            TempData["Error"] = "Username with that name or email already exists.";
+            return RedirectToAction("SignUp");
+        }
+        TempData["Error"] = "Passwors do not match.";
+        return RedirectToAction("SignUp");
 
-        }
-        else
-        {
-            ViewBag.a = true;
-            ViewBag.Error = "invalid password";
-            return RedirectToAction("Signup");
-        }
-       
     }
 
     public IActionResult indexLogged()
@@ -113,8 +111,6 @@ public class HomeController : Controller
 
     public IActionResult Create()
     {
-        Api a = new Api();
-        a.getImage("51d9202a498e44076324c5fc");
         ViewBag.logged = true;
         return View();
     }

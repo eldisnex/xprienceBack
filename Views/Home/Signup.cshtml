@@ -2,8 +2,8 @@
    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
             <div>
-               @if(ViewBag.a){
-                  <h3>@ViewBag.Error</h3>
+               @if(ViewData.ContainsKey("Error")){
+                  <h3>@ViewData["Error"]</h3>
                }
                
                <h1>Sign up</h1>
