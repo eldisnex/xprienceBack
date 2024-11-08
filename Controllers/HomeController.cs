@@ -26,22 +26,22 @@ public class HomeController : Controller
     [Route("/Home/Login")]
     public IActionResult Login()
     {
-        ViewBag.logged = false;
+        if (TempData.ContainsKey("Error"))
+            ViewData["Error"] = TempData["Error"].ToString();
         return View();
     }
 
     public IActionResult GetLogin(string nameMail, string password)
     {
-        ViewBag.User = BD.LogIn(nameMail, password);
-        if (ViewBag.User == null)
+        string hashedPassword = Functions.HashString(password);
+        User user = BD.LogIn(nameMail, hashedPassword);
+        if (user == null)
         {
-            ViewBag["Error"] = "incorrect username or password";
+            TempData["Error"] = "Incorrect username or password";
             return RedirectToAction("Login");
         }
-        else
-        {
-            return RedirectToAction("indexLogged");
-        }
+        Response.Cookies.Append("UserId", user.id.ToString());
+        return RedirectToAction("IndexLogged");
     }
 
     [Route("/SignUp")]
@@ -72,13 +72,13 @@ public class HomeController : Controller
         if (password == verifyPassword)
         {
             string hashedPassword = Functions.HashString(password);
-            // Si esta todo bien
-            Response.Cookies.Append("UserId", "12345");
 
             if (!BD.UserExist(name, mail, hashedPassword))
             {
-                ViewBag.User = BD.SignUp(name, mail, hashedPassword);
-                return RedirectToAction("indexLogged");
+                // Si esta todo bien
+                User user = BD.SignUp(name, mail, hashedPassword);
+                Response.Cookies.Append("UserId", user.id.ToString());
+                return RedirectToAction("IndexLogged");
             }
             TempData["Error"] = "Username with that name or email already exists.";
             return RedirectToAction("SignUp");
@@ -88,8 +88,10 @@ public class HomeController : Controller
 
     }
 
-    public IActionResult indexLogged()
+    public IActionResult IndexLogged()
     {
+        string userId = Request.Cookies["UserId"];
+        ViewBag.logged = userId != null ? true : false;
         return View();
     }
 

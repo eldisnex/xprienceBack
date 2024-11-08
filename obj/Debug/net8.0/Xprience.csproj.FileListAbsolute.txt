@@ -40,3 +40,4 @@ C:\Users\48674459\Downloads\xprienceBack\obj\Debug\net8.0\refint\Xprience.dll
 C:\Users\48674459\Downloads\xprienceBack\obj\Debug\net8.0\Xprience.pdb
 C:\Users\48674459\Downloads\xprienceBack\obj\Debug\net8.0\Xprience.genruntimeconfig.cache
 C:\Users\48674459\Downloads\xprienceBack\obj\Debug\net8.0\ref\Xprience.dll
+C:\Users\48674459\Downloads\xprienceBack\bin\Debug\net8.0\System.Security.Permissions.dll

@@ -11,31 +11,32 @@ public static class BD
         List<Plan> ListPlan = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM Plan";
+            string sql = "SELECT * FROM [Plan]";
             ListPlan = db.Query<Plan>(sql).ToList();
         }
         return ListPlan;
     }
-    /// <summary>
-    /// Retorna la cantidad de filas afectadas.
-    /// </summary>
-    public static int SignUp(string name, string mail, string password)
+    public static User SignUp(string name, string mail, string password)
+
     {
-        int i;
+        User user;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "INSERT INTO User (name, mail, password) VALUES (@pName, @pMail, @pPassword)";
-            i = db.Execute(sql, new { pName = name, pMail = mail, pPassword = password });
+            string sql = "EXEC SignUp @pName, @pMail, @pPassword";
+            // string sql = "INSERT INTO Users (username, mail, [password]) VALUES (@pName, @pMail, @pPassword)";
+            user = db.QueryFirstOrDefault<User>(sql, new { pName = name, pMail = mail, pPassword = password });
         }
-        return i;
+        return user;
     }
 
     public static User LogIn(string nameMail, string password)
     {
+        Console.WriteLine(nameMail);
+        Console.WriteLine(password);
         User user = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM User WHERE (name = @pNameMail OR mail = @pNameMail) AND password = @pPassword";
+            string sql = "SELECT * FROM Users WHERE (username = @pNameMail OR mail = @pNameMail) AND [password] = @pPassword";
             user = db.QueryFirstOrDefault<User>(sql, new { pNameMail = nameMail, pPassword = password });
         }
         return user;
@@ -46,7 +47,7 @@ public static class BD
         User userExist = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM [User] WHERE name = @pName OR mail = @pMail";
+            string sql = "SELECT * FROM Users WHERE username = @pName OR mail = @pMail";
             userExist = db.QueryFirstOrDefault<User>(sql, new { pName = name, pMail = mail, pPassword = password });
         }
         return userExist != null;

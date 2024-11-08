@@ -2,6 +2,9 @@
    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
             <div>
+               @if(ViewData.ContainsKey("Error")){
+                  <h3>@ViewData["Error"]</h3>
+               }
                <h1>Log in</h1>
                <form action = '@Url.Action("GetLogin")'>
                <div class="inputGroup">
