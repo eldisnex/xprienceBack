@@ -8,7 +8,7 @@ public static class BD
     public static List<Plan> ListPlan()
     {
 
-        List<Plan> ListPlan = null;
+        List<Plan>? ListPlan = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM [Plan]";
@@ -16,10 +16,9 @@ public static class BD
         }
         return ListPlan;
     }
-    public static User SignUp(string name, string mail, string password)
-
+    public static User? SignUp(string name, string mail, string password)
     {
-        User user;
+        User? user;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "EXEC SignUp @pName, @pMail, @pPassword";
@@ -29,11 +28,11 @@ public static class BD
         return user;
     }
 
-    public static User LogIn(string nameMail, string password)
+    public static User? LogIn(string nameMail, string password)
     {
         Console.WriteLine(nameMail);
         Console.WriteLine(password);
-        User user = null;
+        User? user = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Users WHERE (username = @pNameMail OR mail = @pNameMail) AND [password] = @pPassword";
@@ -44,13 +43,24 @@ public static class BD
 
     public static bool UserExist(string name, string mail, string password)
     {
-        User userExist = null;
+        User? userExist = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Users WHERE username = @pName OR mail = @pMail";
             userExist = db.QueryFirstOrDefault<User>(sql, new { pName = name, pMail = mail, pPassword = password });
         }
         return userExist != null;
+    }
+
+    public static string? GetCookie(int id)
+    {
+        string? cookie = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC [LogIn] @pId";
+            cookie = db.QueryFirstOrDefault<string>(sql, new { pId = id });
+        }
+        return cookie;
     }
 
 

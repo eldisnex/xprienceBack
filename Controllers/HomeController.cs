@@ -34,7 +34,7 @@ public class HomeController : Controller
     public IActionResult GetLogin(string nameMail, string password)
     {
         string hashedPassword = Functions.HashString(password);
-        User user = BD.LogIn(nameMail, hashedPassword);
+        User? user = BD.LogIn(nameMail, hashedPassword);
         if (user == null)
         {
             TempData["Error"] = "Incorrect username or password";
@@ -76,7 +76,7 @@ public class HomeController : Controller
             if (!BD.UserExist(name, mail, hashedPassword))
             {
                 // Si esta todo bien
-                User user = BD.SignUp(name, mail, hashedPassword);
+                User? user = BD.SignUp(name, mail, hashedPassword);
                 Response.Cookies.Append("UserId", user.id.ToString());
                 return RedirectToAction("IndexLogged");
             }
@@ -90,7 +90,7 @@ public class HomeController : Controller
 
     public IActionResult IndexLogged()
     {
-        string userId = Request.Cookies["UserId"];
+        string? userId = Request.Cookies["UserId"];
         ViewBag.logged = userId != null ? true : false;
         return View();
     }
