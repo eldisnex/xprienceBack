@@ -21,8 +21,32 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\cat1.png",
+      "PackagePath": "staticwebassets\\img\\cat1.png"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\cat2.png",
+      "PackagePath": "staticwebassets\\img\\cat2.png"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\cat3.png",
+      "PackagePath": "staticwebassets\\img\\cat3.png"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\cat4.png",
+      "PackagePath": "staticwebassets\\img\\cat4.png"
+    },
+    {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\add.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\add.svg"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\bookmark.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\bookmark.svg"
     },
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\closeFullscreen.svg",
@@ -37,12 +61,16 @@
       "PackagePath": "staticwebassets\\img\\svg\\eyeNoSee.svg"
     },
     {
-      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\js\\handleCreateForm.js",
-      "PackagePath": "staticwebassets\\js\\handleCreateForm.js"
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\whiteLogo.png",
+      "PackagePath": "staticwebassets\\img\\whiteLogo.png"
     },
     {
-      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\js\\site.js",
-      "PackagePath": "staticwebassets\\js\\site.js"
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\js\\createCategories.js",
+      "PackagePath": "staticwebassets\\js\\createCategories.js"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\js\\handleCreateForm.js",
+      "PackagePath": "staticwebassets\\js\\handleCreateForm.js"
     },
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\lib\\bootstrap\\LICENSE",

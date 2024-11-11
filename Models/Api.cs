@@ -11,9 +11,9 @@ public class Api
         request.AddHeader("Authorization", authorization);
     }
 
-    public async Task<string> makeRequest(string latitude, string longitude, string query)
+    public async Task<string> makeRequest(string latitude, string longitude, string query, int min, int max, string catCode)
     {
-        RestClientOptions options = new RestClientOptions(baseUrl + $"search?ll={latitude},{longitude}&query={query}");
+        RestClientOptions options = new RestClientOptions(baseUrl + $"search?ll={latitude},{longitude}&query={query}&categories={catCode}");
         RestClient client = new RestClient(options);
         var response = await client.GetAsync(request);
         Console.WriteLine(response.Content);

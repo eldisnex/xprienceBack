@@ -1,0 +1,42 @@
+<h1 class="larger">
+    Choose your <span class="xColored">categories</span>
+</h1>
+<section class="categoriesContainer">
+    <div class="card2 categorieCard">
+        <img src="~/img/cat3.png" alt="" />
+        <div>
+            <h2>Entertainment.</h2>
+            <p>Laughter, pure fun</p>
+            <a href='@Url.Action("Create", new {categorie="Entertainment"})' id="Entertainment">Add</a>
+        </div>
+    </div>
+    <div class="card2 categorieCard">
+        <img src="~/img/cat2.png" alt="" />
+        <div>
+            <h2>Gastronomy.</h2>
+            <p>Bold flavors, fresh ingredients.</p>
+            <a href='@Url.Action("Create", new {categorie="Gastronomy"})' id="Gastronomy">Add</a>
+        </div>
+    </div>
+    <div class="card2 categorieCard">
+        <img src="~/img/cat1.png" alt="" />
+        <div>
+            <h2>Ambiental.</h2>
+            <p>Soft light, fresh air</p>
+            <a href='@Url.Action("Create", new {categorie="Ambiental"})' id="Ambiental">Add</a>
+        </div>
+    </div>
+    <div class="card2 categorieCard">
+        <img src="~/img/cat4.png" alt="" />
+        <div>
+            <h2>Relax.</h2>
+            <p>Deep peace, total relaxation.</p>
+            <a href='@Url.Action("Create", new {categorie="Relax"})' id="Relax">Add</a>
+        </div>
+    </div>
+</section>
+<section class="pathButtons">
+    <a href='@Url.Action("ReceivePlan")' class="button notBefore left">Create Plan <img src="~/img/whiteLogo.png"
+            width="32" alt="white logo"></a>
+</section>
+<script src="~/js/createCategories.js"></script>

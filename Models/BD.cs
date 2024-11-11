@@ -30,8 +30,6 @@ public static class BD
 
     public static User? LogIn(string nameMail, string password)
     {
-        Console.WriteLine(nameMail);
-        Console.WriteLine(password);
         User? user = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
@@ -63,5 +61,15 @@ public static class BD
         return cookie;
     }
 
-
+    public static User? GetUserByCookie(string? cookie){
+        if (cookie == null)
+            return null;
+        User? user = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Users WHERE cookie = @pCookie";
+            user = db.QueryFirstOrDefault<User>(sql, new { pCookie = cookie });
+        }
+        return user;
+    }
 }

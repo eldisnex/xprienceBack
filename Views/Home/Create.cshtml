@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="~/css/filters.css" />
 <section class="block create">
     <form action="index.html">
-        <h1 class="createTitle">Gastronomy</h1>
+        <h1 class="createTitle">@ViewBag.categorie</h1>
         <div class="input-group">
             <label for="submit" class="searchButton">
                 Search
@@ -61,31 +61,30 @@
             <div class="card">
                 <div class="coverImage">
                 </div>
-                <img src="img/rollerCoaster.jfif" alt="" class="img" />
+                <img src="" alt="" class="img" />
                 <div class="row">
-                    <h3>Title</h3>
-                    <span class="stars">4.7</span>
+                    <h3></h3>
+                    <span class="stars"></span>
                 </div>
-                <p class="desc">The coffee with the best dedication.</p>
+                <p class="desc"></p>
                 <div class="row">
-                    <p class="people">For 2 people</p>
+                    <p class="people"></p>
                     <button>
-                        <img src="img/bookmark.svg" alt="Save" />
+                        <img src="~/img/svg/bookmark.svg" alt="Save" />
                     </button>
                 </div>
             </div>
-            <button class="button small">Add</button>
+            <button class="button small" onclick="add(this)">Add</button>
         </div>
     </template>
 </div>
 <div class="pathButtons">
-    <a href="" class="button">Back</a>
-    <a href="" class="button">Next</a>
+    <a href='@Url.Action("CreateCategories")' class="button back">Back</a>
 </div>
 <script>
-    const handleCreateUrl = '@Url.Action("HandleCreate")'
-    const handleImage = '@Url.Action("HandleImage")'
-</script>
+    const handleCreateUrl = '@Url.Action("HandleCreate")';
+    const handleImage = '@Url.Action("HandleImage")';
+    const categorie = '@ViewBag.categorie';
 </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="~/js/handleCreateForm.js"></script>

@@ -1,78 +1,72 @@
 @{
    Layout = "~/Views/Shared/_Layout2.cshtml";
 }
-            <div>
-               @if(ViewData.ContainsKey("Error")){
-                  <h3>@ViewData["Error"]</h3>
-               }
-               <h1>Log in</h1>
-               <form action = '@Url.Action("GetLogin")'>
-               <div class="inputGroup">
-                  <label for="username">Username or email</label>
-                  <br />
-                  <input type="text" name = nameMail id="username" />
-               </div>
-               <div class="inputGroup">
-                  <input type="checkbox" name="eye" id="eye" />
-                  <label for="eye"></label>
-                  <label for="password">Password</label>
-                  <br />
-                  <input type="text" name = Password id="password" />
-               </div>
-               <input type="submit" value="Log in" />
-               </form>
-            </div>
-            <section class="info">
-               <div class="slide">
-                  <div class="carrousel">
-                     <div class="carrouselItem">
-                        <img src="img/Navigation.svg" alt="" width="400px" />
-                        <h2>Check your plans</h2>
-                        <p>
-                           En Xprience tenemos el valor trascendental y que
-                           atraviesa al mundo.
-                        </p>
-                     </div>
-                     <div class="carrouselItem">
-                        <img src="img/Navigation.svg" alt="" width="400px" />
-                        <h2>Check your plans</h2>
-                        <p>
-                           En Xprience tenemos el valor trascendental y que
-                           atraviesa al mundo.
-                        </p>
-                     </div>
-                     <div class="carrouselItem">
-                        <img src="img/Navigation.svg" alt="" width="400px" />
-                        <h2>Check your plans</h2>
-                        <p>
-                           En Xprience tenemos el valor trascendental y que
-                           atraviesa al mundo.
-                        </p>
-                     </div>
-                  </div>
-               </div>
-               <div class="status">
-                  <div
-                     class="statusItem"
-                     style="
+<div>
+   @if (ViewData.ContainsKey("Error"))
+   {
+      <h3>@ViewData["Error"]</h3>
+   }
+   <h1>Log in</h1>
+   <form action='@Url.Action("GetLogin")'>
+      <div class="inputGroup">
+         <label for="username">Username or email</label>
+         <br />
+         <input type="text" name=nameMail id="username" />
+      </div>
+      <div class="inputGroup">
+         <input type="checkbox" name="eye" id="eye" />
+         <label for="eye"></label>
+         <label for="password">Password</label>
+         <br />
+         <input type="text" name=Password id="password" />
+      </div>
+      <div class="inputGroup">
+         <a href='@Url.Action("SignUp")'>Don't have an account?</a>
+      </div>
+      <input type="submit" value="Log in" />
+   </form>
+</div>
+<section class="info">
+   <div class="slide">
+      <div class="carrousel">
+         <div class="carrouselItem">
+            <img src="img/Navigation.svg" alt="" width="400px" />
+            <h2>Check your plans</h2>
+            <p>
+               En Xprience tenemos el valor trascendental y que
+               atraviesa al mundo.
+            </p>
+         </div>
+         <div class="carrouselItem">
+            <img src="img/Navigation.svg" alt="" width="400px" />
+            <h2>Check your plans</h2>
+            <p>
+               En Xprience tenemos el valor trascendental y que
+               atraviesa al mundo.
+            </p>
+         </div>
+         <div class="carrouselItem">
+            <img src="img/Navigation.svg" alt="" width="400px" />
+            <h2>Check your plans</h2>
+            <p>
+               En Xprience tenemos el valor trascendental y que
+               atraviesa al mundo.
+            </p>
+         </div>
+      </div>
+   </div>
+   <div class="status">
+      <div class="statusItem" style="
                         animation: changeMarked 10s linear infinite;
                         animation-delay: 0;
-                     "
-                  ></div>
-                  <div
-                     class="statusItem"
-                     style="
+                     "></div>
+      <div class="statusItem" style="
                         animation: changeMarked 10s linear infinite;
                         animation-delay: 3333ms;
-                     "
-                  ></div>
-                  <div
-                     class="statusItem"
-                     style="
+                     "></div>
+      <div class="statusItem" style="
                         animation: changeMarked 10s linear infinite;
                         animation-delay: 6666ms;
-                     "
-                  ></div>
-               </div>
-            </section>
-         
+                     "></div>
+   </div>
+</section>

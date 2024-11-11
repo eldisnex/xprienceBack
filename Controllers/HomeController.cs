@@ -26,8 +26,12 @@ public class HomeController : Controller
     [Route("/Home/Login")]
     public IActionResult Login()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user != null)
+            // Si esta logeado
+            return RedirectToAction("IndexLogged");
         if (TempData.ContainsKey("Error"))
-            ViewData["Error"] = TempData["Error"].ToString();
+            ViewData["Error"] = TempData["Error"]?.ToString();
         return View();
     }
 
@@ -48,7 +52,11 @@ public class HomeController : Controller
     [Route("/Home/SignUp")]
     public IActionResult SignUp()
     {
-        // Console.WriteLine("Hola");
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user != null)
+            // Si esta logeado
+            return RedirectToAction("IndexLogged");
+
         // Response.Cookies.Delete("UserId");
         // Response.Cookies.Append("UserId", "12345");
         // Checkear si existe
@@ -56,7 +64,7 @@ public class HomeController : Controller
 
         // Console.WriteLine(usuario ?? "No hay usuario definido");
         if (TempData.ContainsKey("Error"))
-            ViewData["Error"] = TempData["Error"].ToString();
+            ViewData["Error"] = TempData["Error"]?.ToString();
         return View();
     }
 
@@ -77,7 +85,18 @@ public class HomeController : Controller
             {
                 // Si esta todo bien
                 User? user = BD.SignUp(name, mail, hashedPassword);
-                Response.Cookies.Append("UserId", user.id.ToString());
+                if (user == null)
+                {
+                    TempData["Error"] = "Error al crear el usuario";
+                    return RedirectToAction("SignUp");
+                }
+                user.cookie = BD.GetCookie(user.id);
+                if (user.cookie == null)
+                {
+                    TempData["Error"] = "Error al crear la cookie";
+                    return RedirectToAction("SignUp");
+                }
+                Response.Cookies.Append("UserId", user.cookie);
                 return RedirectToAction("IndexLogged");
             }
             TempData["Error"] = "Username with that name or email already exists.";
@@ -90,38 +109,66 @@ public class HomeController : Controller
 
     public IActionResult IndexLogged()
     {
-        string? userId = Request.Cookies["UserId"];
-        ViewBag.logged = userId != null ? true : false;
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
         return View();
     }
 
     public IActionResult Inspiration()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
         ViewBag.Plans = BD.ListPlan();
         return View();
     }
 
     public IActionResult Explore()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
         return View();
     }
 
     public IActionResult Calendar()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
         return View();
     }
 
-    public IActionResult Create()
+    public IActionResult CreateCategories()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
         ViewBag.logged = true;
         return View();
     }
 
-    [HttpPost]
-    public async Task<IActionResult> HandleCreate(string latitude, string longitude, string query)
+    public IActionResult Create(string categorie)
     {
+        string[] cats = { "Relax", "Ambiental", "Entertainment", "Gastronomy" };
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        if (!cats.Contains(categorie))
+            return RedirectToAction("Create", new { categorie = "Entertainment" });
+        ViewBag.categorie = categorie;
+        return View();
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> HandleCreate(string latitude, string longitude, string query, int min, int max, string code)
+    {
+        Console.WriteLine(code);
         Api api = new Api();
-        var r = await api.makeRequest(latitude, longitude, query);
+        var r = await api.makeRequest(latitude, longitude, query, min, max, code);
         return Json(r);
     }
 
@@ -133,32 +180,11 @@ public class HomeController : Controller
         return Json(r);
     }
 
-    public IActionResult CreatePlanGastronomy()
-    {
-        ViewBag.ButtonEnabled = true;
-        int i = 0;
-        if (i == 1)
-        {
-            ViewBag.ButtonEnabled = false;
-        }
-        i++;
-        return View();
-    }
-
-    public IActionResult CreatePlanEntrtainment()
-    {
-        ViewBag.ButtonEnabled = true;
-        int i = 0;
-        if (i == 1)
-        {
-            ViewBag.ButtonEnabled = false;
-        }
-        i++;
-        return View();
-    }
-
     public IActionResult ReceivePlan()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
         return View();
     }
 
