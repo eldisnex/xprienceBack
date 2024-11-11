@@ -746,3 +746,25 @@ main div.card2 img {
 .receivePlan .items .item h3 {
    margin: 0;
 }
+
+.receiveTime {
+   border: none;
+   outline: none;
+}
+
+.nextButtonAnim {
+   animation: nextButtonAnim 0.3s;
+}
+
+@keyframes nextButtonAnim {
+   40% {
+      rotate: 10deg;
+   }
+   50% {
+      rotate: 5deg;
+      background-color: red;
+   }
+   60% {
+      rotate: 10deg;
+   }
+}

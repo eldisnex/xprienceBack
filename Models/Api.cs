@@ -27,4 +27,12 @@ public class Api
         var response = await client.GetAsync(request);
         return response.Content;
     }
+
+    public async Task<string> getDetails(string id)
+    {
+        RestClientOptions options = new RestClientOptions(baseUrl + $"{id}");
+        RestClient client = new RestClient(options);
+        var response = await client.GetAsync(request);
+        return response.Content;
+    }
 }

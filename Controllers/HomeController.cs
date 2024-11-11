@@ -180,6 +180,14 @@ public class HomeController : Controller
         return Json(r);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> HandleDetails(string id)
+    {
+        Api api = new Api();
+        var r = await api.getDetails(id);
+        return Json(r);
+    }
+
     public IActionResult ReceivePlan()
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);

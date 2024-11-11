@@ -42,12 +42,12 @@ const onSent = (e) => {
       .then((res) => JSON.parse(res).results)
       .then((res) => {
          res.forEach((item) => {
-            createCard(item);
+            createLine(item);
          });
       });
 };
 
-const createCard = (item) => {
+const createLine = (item) => {
    const template = document.getElementById('subCardTemplate').content;
    const clone = document.importNode(template, true);
    $.post(handleImage, { id: item.fsq_id })
