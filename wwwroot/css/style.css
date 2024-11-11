@@ -838,6 +838,27 @@ main div.card2 img {
    background-color: var(--colorX);
 }
 
-.calendar ol li.selected{
+.calendar ol li.selected {
    background-color: var(--colorX);
+   color: white;
+}
+
+.qr {
+   width: 500px;
+   box-shadow: var(--shadow);
+   border-radius: var(--radius1);
+}
+
+#copy:focus {
+   color: transparent;
+   position: relative;
+}
+
+#copy:focus::after {
+   content: '✓';
+   color: white;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   translate: -50% -50%;
 }

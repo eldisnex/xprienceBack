@@ -77,3 +77,5 @@ obj/Debug/net8.0/Xprience.AssemblyInfo.cs
 obj/Debug/net8.0/Xprience.AssemblyInfoInputs.cache
 obj/Debug/net8.0/Xprience.assets.cache
 obj/Debug/net8.0/Xprience.GeneratedMSBuildEditorConfig.editorconfig
+bin/Debug/net8.0/Xprience.dll
+bin/Debug/net8.0/Xprience.exe

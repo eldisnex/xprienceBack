@@ -54,6 +54,7 @@ const getHtmlFor = (year, month) => {
 };
 
 getHtmlFor(actualYear, actualMonth);
+let allElements = [];
 
 $('#nm').click(() => {
    actualMonth++;
@@ -62,6 +63,7 @@ $('#nm').click(() => {
       actualYear++;
    }
    getHtmlFor(actualYear, actualMonth);
+   updateDisplayedElements();
 });
 
 $('#pm').click(() => {
@@ -71,26 +73,29 @@ $('#pm').click(() => {
       actualYear--;
    }
    getHtmlFor(actualYear, actualMonth);
+   updateDisplayedElements();
 });
 
-const allElements = [];
-
-document.querySelectorAll('li[select="true"]').forEach((e) => {
-   allElements.push(e);
-   e.addEventListener('click', () => {
-      allElements.forEach((subE) => {
-         subE.classList.remove('selected');
+const updateDisplayedElements = () => {
+   allElements = [];
+   document.querySelectorAll('li[select="true"]').forEach((e) => {
+      allElements.push(e);
+      e.addEventListener('click', () => {
+         allElements.forEach((subE) => {
+            subE.classList.remove('selected');
+         });
+         e.classList.add('selected');
       });
-      e.classList.add('selected');
    });
-});
+};
+
+updateDisplayedElements();
 
 $('.nextButton').click(() => {
    for (var i = 0; i < localStorage.length; i++) {
       if (
          allElements.findIndex((e) => e.classList.contains('selected')) == -1
       ) {
-         console.log('here');
          $('.nextButton').addClass('nextButtonAnim');
          setTimeout(() => {
             $('.nextButton').removeClass('nextButtonAnim');
@@ -99,4 +104,29 @@ $('.nextButton').click(() => {
       }
    }
    // Cerrar plan
+   $.post(handleCerrar, {
+      plan: allStorage().join(';'),
+      day: allElements.find((e) => e.classList.contains('selected')).innerText,
+      month: actualMonth,
+      year: actualYear
+   }).done((r) => {
+      if (r.created) {
+         // Borrar datos
+         location.href = endUrl + '?id=' + r.plan.id;
+      }
+      // Hubo un error
+   });
 });
+
+function allStorage() {
+   var archive = [],
+      keys = Object.keys(localStorage),
+      i = 0,
+      key;
+
+   for (; (key = keys[i]); i++) {
+      archive.push(key + '=' + localStorage.getItem(key));
+   }
+   archive = archive.map((e) => [e.split('=')[0], e.split(',')[1]].join(','));
+   return archive;
+}

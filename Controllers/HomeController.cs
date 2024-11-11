@@ -138,7 +138,31 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
+        ViewBag.logged = true;
         return View();
+    }
+
+    public IActionResult EndPlan(int id)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        string link = Url.Action("ViewPlan", new { planId = id });
+        QR qr = new QR(link);
+        ViewBag.qr = qr.create();
+        ViewBag.link = link;
+        return View();
+    }
+
+    [HttpPost]
+    public IActionResult HandleCreatePlan(string plan, int day, int month, int year)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        bool created = BD.PlanCreated(plan, day, month, year, user.id);
+        return Json(new { created = created, plan = BD.GetLastPlan(user.id) });
     }
 
     public IActionResult CreateCategories()
@@ -189,6 +213,14 @@ public class HomeController : Controller
     }
 
     public IActionResult ReceivePlan()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        return View();
+    }
+
+    public IActionResult ViewPlan(int planId)
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)

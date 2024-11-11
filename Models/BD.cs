@@ -61,7 +61,8 @@ public static class BD
         return cookie;
     }
 
-    public static User? GetUserByCookie(string? cookie){
+    public static User? GetUserByCookie(string? cookie)
+    {
         if (cookie == null)
             return null;
         User? user = null;
@@ -71,5 +72,28 @@ public static class BD
             user = db.QueryFirstOrDefault<User>(sql, new { pCookie = cookie });
         }
         return user;
+    }
+
+    public static bool PlanCreated(string ids, int day, int month, int year, int userId)
+    {
+        int lines;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC GeneratePlan @pIds, @pDay, @pMonth, @pYear, @pUserId";
+            lines = db.Execute(sql, new { pIds = ids, pDay = day, pMonth = month, pYear = year, pUserId = userId });
+        }
+        return lines == 2;
+    }
+
+    public static Plan? GetLastPlan(int userId)
+    {
+        Plan? p;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT [Plan].* FROM [Plan] INNER JOIN PlanUser ON [Plan].id = PlanUser.idPlan INNER JOIN Users ON PlanUser.idUser = Users.id WHERE Users.id = @pUserId ORDER BY [Plan].id DESC";
+            p = db.QueryFirstOrDefault<Plan>(sql, new { pUserId = userId });
+        }
+        return p;
+
     }
 }

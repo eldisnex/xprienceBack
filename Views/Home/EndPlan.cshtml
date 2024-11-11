@@ -1,0 +1,14 @@
+<section class="receivePlan">
+    <div>
+        <h1 class="createTitle">Share your <span class="xColored">plans</span>!</h1>
+        <img src="~/img/end.png" width="300" alt="">
+    </div>
+    <div>
+        <img src="@ViewBag.qr" alt="" class="qr">
+        <br>
+        <a href="@ViewBag.qr" class="button notBefore" id="save" target="_blank" download="qr_code.png">Save</a>
+        <button class="button" id="copy"
+            onclick="navigator.clipboard.writeText(location.origin + '@ViewBag.link')">Copy</button>
+    </div>
+</section>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
