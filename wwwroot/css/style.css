@@ -682,6 +682,8 @@ main div.card2 img {
    display: flex;
    justify-content: space-between;
    width: var(--pageW);
+   flex-direction: row-reverse;
+   gap: 10px;
 }
 
 .receivePlan .items {
@@ -767,4 +769,75 @@ main div.card2 img {
    60% {
       rotate: 10deg;
    }
+}
+
+/* ---- Calendar ---- */
+
+.calendarNav {
+   width: var(--pageW);
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.calendarNav button {
+   background: none;
+   border: none;
+   height: 24px;
+   width: 24px;
+   padding: 0;
+}
+
+.calendarNav button:hover {
+   background-color: #eee;
+}
+
+.calendar {
+   width: var(--pageW);
+}
+
+.calendar h1 {
+   text-transform: capitalize;
+   font-weight: 800;
+}
+
+.calendar ol {
+   display: grid;
+   grid-template-columns: repeat(7, 1fr);
+   grid-template-rows: repeat(5, 1fr);
+   gap: 10px;
+   place-items: center;
+}
+
+.calendar ol li {
+   list-style: none;
+   --w: 80px;
+   width: var(--w);
+   height: var(--w);
+   border-radius: var(--radius2);
+   /* box-shadow: var(--shadow); */
+   border: 1px solid #00000022;
+   margin: 0;
+   padding: 10px;
+   transition: all 0.3s;
+}
+
+/* Los primeros 7 */
+.calendar ol li:nth-child(n + 1):nth-child(-n + 7) {
+   /* width: unset; */
+   height: unset;
+   text-align: center;
+   border: 1px solid var(--colorX);
+}
+
+.calendar ol li:nth-child(8) {
+   grid-column-start: var(--first-day-start);
+}
+
+.calendar ol li[select='true']:hover {
+   background-color: var(--colorX);
+}
+
+.calendar ol li.selected{
+   background-color: var(--colorX);
 }

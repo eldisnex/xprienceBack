@@ -38,5 +38,5 @@ $('.nextButton').click(() => {
          return;
       }
    }
-   console.log('A');
+   location.href = calendar + `?selectDay=True`;
 });
