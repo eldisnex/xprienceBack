@@ -14,11 +14,9 @@
 <section class="receivePlan">
    <button class="button nextButton">Next</button>
 </section>
-@* @foreach(var a in ViewBag.plans){
-<p>@a.name</p>
-<p>@a.date</p>
-} *@
 <script>
+   const dates = "@ViewBag.dates".split(",")
+   const names = "@ViewBag.names".split(",")
    const handleCerrar = '@Url.Action("HandleCreatePlan")';
    const endUrl = '@Url.Action("EndPlan")';
 </script>

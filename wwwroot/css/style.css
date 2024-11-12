@@ -989,3 +989,19 @@ section.flexSection {
    justify-content: space-between;
    width: var(--pageW);
 }
+
+.event {
+   background-image: url('../img/logo.png');
+   background-size: 100%;
+   background-repeat: no-repeat;
+   animation: appear 0.5s;
+}
+
+@keyframes appear {
+   from {
+      background-position-x: -100px;
+   }
+   to {
+      background-position-x: 0px;
+   }
+}

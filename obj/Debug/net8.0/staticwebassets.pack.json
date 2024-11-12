@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\anim.css"
     },
     {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\css\\chart.css",
+      "PackagePath": "staticwebassets\\css\\chart.css"
+    },
+    {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\css\\filters.css",
       "PackagePath": "staticwebassets\\css\\filters.css"
     },
@@ -41,12 +45,20 @@
       "PackagePath": "staticwebassets\\img\\end.png"
     },
     {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\l1.png",
+      "PackagePath": "staticwebassets\\img\\l1.png"
+    },
+    {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\add.svg",
       "PackagePath": "staticwebassets\\img\\svg\\add.svg"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\bg.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\bg.svg"
     },
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\bookmark.svg",

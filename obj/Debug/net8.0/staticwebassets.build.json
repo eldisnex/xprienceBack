@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a/dyHPBisJESEM5P9NCiy8ENx+oOnu00JmgY0RH8wSs=",
+  "Hash": "jSbnck0juZPXzWiYPCJVQVT1yQOO8P9YawJSHKXanKY=",
   "Source": "Xprience",
   "BasePath": "_content/Xprience",
   "Mode": "Default",
@@ -34,6 +34,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\anim.css"
+    },
+    {
+      "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\css\\chart.css",
+      "SourceId": "Xprience",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\",
+      "BasePath": "_content/Xprience",
+      "RelativePath": "css/chart.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\chart.css"
     },
     {
       "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\css\\filters.css",
@@ -207,6 +226,25 @@
       "OriginalItemSpec": "wwwroot\\img\\end.png"
     },
     {
+      "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\l1.png",
+      "SourceId": "Xprience",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\",
+      "BasePath": "_content/Xprience",
+      "RelativePath": "img/l1.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\l1.png"
+    },
+    {
       "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\logo.png",
       "SourceId": "Xprience",
       "SourceType": "Discovered",
@@ -243,6 +281,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\svg\\add.svg"
+    },
+    {
+      "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\bg.svg",
+      "SourceId": "Xprience",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\",
+      "BasePath": "_content/Xprience",
+      "RelativePath": "img/svg/bg.svg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\svg\\bg.svg"
     },
     {
       "Identity": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\bookmark.svg",

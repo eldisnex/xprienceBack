@@ -27,8 +27,6 @@ const getHtmlFor = (year, month) => {
          startsOn
       };
    });
-
-   console.log(calendar);
    calendarMonth = [calendar[actualMonth]];
 
    const html = calendarMonth
@@ -50,7 +48,15 @@ const getHtmlFor = (year, month) => {
       })
       .join('');
 
+   subDates = dates
+      .map((e) => e.split('/').map((e) => Number(e)))
+      .filter((e) => e[0] - 1 === month && e[2] === year);
    document.querySelector('.calendar').innerHTML = html;
+   document.querySelectorAll('li').forEach((e) => {
+      if (subDates.some((date) => date[1] === Number(e.textContent))) {
+         e.classList.add('event');
+      }
+   });
 };
 
 getHtmlFor(actualYear, actualMonth);
@@ -77,7 +83,6 @@ $('#pm').click(() => {
 });
 
 const updateDisplayedElements = () => {
-   console.log(actualMonth, actualYear);
    allElements = [];
    document.querySelectorAll('li[select="true"]').forEach((e) => {
       allElements.push(e);

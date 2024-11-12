@@ -123,6 +123,7 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
+        ViewBag.user = user;
         return View();
     }
 
@@ -149,7 +150,9 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        ViewBag.plans = BD.GetPlans(user.id);
+        List<Plan> plans = BD.GetPlans(user.id);
+        ViewBag.dates = string.Join(",", plans.Select(x => x.date.Substring(0, 10)));
+        ViewBag.names = string.Join(",", plans.Select(x => x.name));
         return View();
     }
 
@@ -159,7 +162,7 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        string link = Url.Action("ViewPlan", new { planId = id });
+        string link = Url.Action("ViewPlan", new { planId = id }) ?? "";
         QR qr = new QR(link);
         ViewBag.qr = qr.create();
         ViewBag.link = link;
@@ -255,7 +258,7 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        ViewBag.folder = BD.getFolder(idFolder);
+        // ViewBag.folder = BD.getFolder(idFolder);
         return View();
     }
 
