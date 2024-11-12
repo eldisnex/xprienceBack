@@ -96,4 +96,16 @@ public static class BD
         return p;
 
     }
+
+    public static List<Plan> GetPlans(int userId)
+    {
+        List<Plan>? ListPlan = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT [Plan].* FROM [Plan] INNER JOIN PlanUser ON [Plan].id = PlanUser.idPlan INNER JOIN Users ON PlanUser.idUser = Users.id WHERE Users.id = @pUserId AND PlanUser.Created = 1";
+            ListPlan = db.Query<Plan>(sql, new { pUserId = userId }).ToList();
+        }
+        return ListPlan;
+
+    }
 }

@@ -63,6 +63,10 @@ const createLine = (item) => {
          clone.querySelector('.stars').textContent = '4.5';
          clone.querySelector('.people').textContent = 'For 2 people';
          clone.querySelector('.subCard > button').id = 'add_' + item.fsq_id;
+         clone.querySelector('.favorite').id = 'fav_' + item.fsq_id;
+         clone
+            .querySelector('.favorite + label')
+            .setAttribute('for', 'fav_' + item.fsq_id);
          if (localStorage.getItem(item.fsq_id))
             clone.querySelector('.subCard > button').textContent = '✅';
          $('.cardContainerFlex').append(clone);

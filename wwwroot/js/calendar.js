@@ -68,7 +68,7 @@ $('#nm').click(() => {
 
 $('#pm').click(() => {
    actualMonth--;
-   if (actualMonth % 12 === 0) {
+   if (actualMonth === -1) {
       actualMonth = 11;
       actualYear--;
    }
@@ -77,6 +77,7 @@ $('#pm').click(() => {
 });
 
 const updateDisplayedElements = () => {
+   console.log(actualMonth, actualYear);
    allElements = [];
    document.querySelectorAll('li[select="true"]').forEach((e) => {
       allElements.push(e);

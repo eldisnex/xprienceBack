@@ -18,6 +18,10 @@ public class HomeController : Controller
     // ---- Directorios ----
     public IActionResult Index()
     {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user != null)
+            // Si esta logeado
+            return RedirectToAction("IndexLogged");
         ViewBag.logged = false;
         return View();
     }
@@ -44,7 +48,13 @@ public class HomeController : Controller
             TempData["Error"] = "Incorrect username or password";
             return RedirectToAction("Login");
         }
-        Response.Cookies.Append("UserId", user.id.ToString());
+        user.cookie = BD.GetCookie(user.id);
+        if (user.cookie == null)
+        {
+            TempData["Error"] = "Error al crear la cookie";
+            return RedirectToAction("SignUp");
+        }
+        Response.Cookies.Append("UserId", user.cookie);
         return RedirectToAction("IndexLogged");
     }
 
@@ -139,6 +149,7 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
+        ViewBag.plans = BD.GetPlans(user.id);
         return View();
     }
 
@@ -226,6 +237,32 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         return View();
+    }
+
+    public IActionResult MyPlans()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        ViewBag.created = BD.GetPlans(user.id);
+        return View();
+    }
+
+    public IActionResult ViewFolder(int idFolder)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        ViewBag.folder = BD.getFolder(idFolder);
+        return View();
+    }
+
+    public IActionResult Logout()
+    {
+        Response.Cookies.Delete("UserId");
+        return RedirectToAction("Index");
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

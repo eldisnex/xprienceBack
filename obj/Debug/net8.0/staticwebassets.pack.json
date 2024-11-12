@@ -37,6 +37,10 @@
       "PackagePath": "staticwebassets\\img\\cat4.png"
     },
     {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\end.png",
+      "PackagePath": "staticwebassets\\img\\end.png"
+    },
+    {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
@@ -67,6 +71,14 @@
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\eyeNoSee.svg",
       "PackagePath": "staticwebassets\\img\\svg\\eyeNoSee.svg"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\heart.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\heart.svg"
+    },
+    {
+      "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\svg\\heartFill.svg",
+      "PackagePath": "staticwebassets\\img\\svg\\heartFill.svg"
     },
     {
       "Id": "D:\\Uriel\\Descargas\\xprienceBack\\wwwroot\\img\\whiteLogo.png",
