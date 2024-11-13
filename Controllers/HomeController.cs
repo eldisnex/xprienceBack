@@ -226,6 +226,14 @@ public class HomeController : Controller
         return Json(r);
     }
 
+    public async Task<IActionResult> GetRawImage(string id){
+        Api api = new Api();
+        var r = await api.getImage(id);
+        string prefix = r.Split(",")[2].Split("\"")[3];
+        string suffix = r.Split(",")[3].Split("\"")[3];
+        return Redirect(prefix + "original" + suffix);
+    }
+
     public IActionResult ReceivePlan()
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
@@ -258,7 +266,8 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        // ViewBag.folder = BD.getFolder(idFolder);
+        ViewBag.folder = BD.GetFolder(idFolder, user.id);
+        // Console.WriteLine(ViewBag.folder[0].fsq_ids.Split(";")[0].Split(",")[0]);
         return View();
     }
 

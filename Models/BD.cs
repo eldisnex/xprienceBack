@@ -108,4 +108,14 @@ public static class BD
         return ListPlan;
 
     }
+
+    public static List<Plan> GetFolder(int folderId, int userId){
+        List<Plan>? ListPlan = null;
+        using(SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC GetFolder @pIdFolder, @pUserId";
+            ListPlan = db.Query<Plan>(sql, new {pIdFolder = folderId, pUserId = userId }).ToList();
+        }
+        return ListPlan;
+    }
 }

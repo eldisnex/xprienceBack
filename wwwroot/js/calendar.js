@@ -118,6 +118,7 @@ $('.nextButton').click(() => {
    }).done((r) => {
       if (r.created) {
          // Borrar datos
+         localStorage.clear();
          location.href = endUrl + '?id=' + r.plan.id;
       }
       // Hubo un error
