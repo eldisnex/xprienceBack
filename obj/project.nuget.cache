@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8UBACFYK7K2kkTa6pHGcEAXXwqFgdIpCn5SGUSl6cZ9CPW92Otu8K0enKFmoAxnhlrczPn0+R/eIIL1gd7vbLQ==",
+  "dgSpecHash": "34Lh5b1rxiTvfhsTmRLfLjSzXhvKvGwY/Afk4wcqw6ZKO41eT/MZvxztZVFD/2KVm+49ufrPVqGa1zoL5VeATw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\48179712\\Downloads\\jyjt\\xprienceBack\\Xprience.csproj",
+  "projectFilePath": "C:\\Users\\48179712\\Downloads\\iudsfjh\\Xprience.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48179712\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\48179712\\.nuget\\packages\\jobject\\1.0.0\\jobject.1.0.0.nupkg.sha512",
@@ -17,11 +17,7 @@
     "C:\\Users\\48179712\\.nuget\\packages\\runtime.win-x86.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\48179712\\.nuget\\packages\\system.data.sqlclient\\4.8.6\\system.data.sqlclient.4.8.6.nupkg.sha512",
     "C:\\Users\\48179712\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
-    "C:\\Users\\48179712\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\48179712\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.20\\microsoft.netcore.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\48179712\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.20\\microsoft.windowsdesktop.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\48179712\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.20\\microsoft.aspnetcore.app.ref.7.0.20.nupkg.sha512",
-    "C:\\Users\\48179712\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.20\\microsoft.netcore.app.host.win-x64.7.0.20.nupkg.sha512"
+    "C:\\Users\\48179712\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
   "logs": []
 }

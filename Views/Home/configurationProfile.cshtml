@@ -1,4 +1,3 @@
-    <title>Configuración de Cuenta</title>
       <link rel="stylesheet" href="~/css/config.css" />
          <nav class="sidebar">
             <div class="profile">
@@ -7,15 +6,13 @@
                   alt="Avatar"
                   class="sidebar-avatar"
                />
-               <h3>Tobias Jajurin</h3>
+               <h3>@ViewBag.username</h3>
             </div>
             <ul class="menu">
-               <li><a href="#" class="active">Perfil</a></li>
-               <li><a href="ConfiguracionPerfil.html">Configuración</a></li>
-               <li>
-                  <a href="ConfiguracionNotificaciones.html">Notificaciones</a>
-               </li>
-               <li><a href="ConfiguracionIdioma.html">Idioma y región</a></li>
+                <li><a href="#" class="active">Perfil</a></li>
+                <li><a href='@Url.Action("ConfigurationConfiguration")'>Configuración</a></li>
+                <li><a href='@Url.Action("ConfigurationNoti")'>Notificaciones</a></li>
+                <li><a href='@Url.Action("ConfigurationLang")'>Idioma y región</a></li>
             </ul>
          </nav>
          <div class="main-content">
@@ -30,14 +27,15 @@
                   />
                   <div class="name-input">
                      <label for="name">Nombre</label>
-                     <input type="text" id="name" value="Tobias Jajurin" />
+                     <p>@ViewBag.username</p>
                      <a href="#" class="add-photo-link">Añadir foto</a>
+                      <button class="align-right" >Cambiar Nombre</button>
                   </div>
                </div>
                <hr />
                <div class="input-group">
                   <label>Correo electrónico</label>
-                  <p>tobiasjajurin@gmail.com</p>
+                  <p>@ViewBag.mail</p>
                   <button class="align-right">
                      Cambiar correo electrónico
                   </button>

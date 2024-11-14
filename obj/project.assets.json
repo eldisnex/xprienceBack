@@ -649,11 +649,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\48179712\\Downloads\\jyjt\\xprienceBack\\Xprience.csproj",
+      "projectUniqueName": "C:\\Users\\48179712\\Downloads\\iudsfjh\\Xprience.csproj",
       "projectName": "Xprience",
-      "projectPath": "C:\\Users\\48179712\\Downloads\\jyjt\\xprienceBack\\Xprience.csproj",
+      "projectPath": "C:\\Users\\48179712\\Downloads\\iudsfjh\\Xprience.csproj",
       "packagesPath": "C:\\Users\\48179712\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\48179712\\Downloads\\jyjt\\xprienceBack\\obj\\",
+      "outputPath": "C:\\Users\\48179712\\Downloads\\iudsfjh\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -680,11 +680,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -723,24 +718,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -749,7 +726,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

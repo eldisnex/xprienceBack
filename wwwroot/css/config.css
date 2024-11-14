@@ -10,6 +10,7 @@
     background-color: #fff;
     /* border-right: 2px solid #ddd; */
     box-shadow: 1px 0 #ddd;
+    align-self: flex-start;
 
 }
 
@@ -110,4 +111,8 @@ hr {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+main{
+    flex-direction: row;
 }

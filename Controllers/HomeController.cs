@@ -21,8 +21,9 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user != null)
             // Si esta logeado
-            return RedirectToAction("IndexLogged");
-        ViewBag.logged = false;
+            ViewBag.logged = true;
+        else ViewBag.logged = false;
+        
         return View();
     }
 
@@ -288,6 +289,54 @@ public class HomeController : Controller
 
      public IActionResult configurationProfile()
      {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        ViewBag.username = user.username;
+        ViewBag.mail = user.mail;
+        return View();
+     }
+      public IActionResult configurationConfiguration()
+     {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        return View();
+     }
+     public IActionResult configurationNoti()
+     {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        return View();
+     }
+     public IActionResult configurationLang()
+     {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        return View();
+     }
+     public IActionResult ChangeUsername(string userChanged)
+     {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        BD.ChangeUsername(userChanged);
+        return View();
+     }
+      public IActionResult ChangeMail(string mailChanged)
+     {
+         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        BD.ChangeMail(mailChanged);
         return View();
      }
 }

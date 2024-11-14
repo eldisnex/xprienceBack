@@ -127,4 +127,23 @@ public static class BD
         }
         return p;
     }
+
+     public static void ChangeUsername(string userChanged)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "UPDATE Users SET @puserChanged = username";
+            db.Execute(sql, new {puserChanged = userChanged});
+        }
+    }
+
+    public static void ChangeMail(string mailChanged)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "UPDATE Users SET @pmailChanged = mail";
+            db.Execute(sql, new {pmailChanged = mailChanged});
+        }
+    }
+
 }
