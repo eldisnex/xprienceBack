@@ -247,6 +247,8 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
+        ViewBag.logged = true;
+        ViewBag.plan = BD.GetPlans(planId);
         return View();
     }
 

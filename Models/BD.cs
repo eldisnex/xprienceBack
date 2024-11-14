@@ -118,4 +118,13 @@ public static class BD
         }
         return ListPlan;
     }
+
+    public static Plan GetPlan(int idPlan){
+        Plan p = null;
+        using(SqlConnection db = new SqlConnection(_connectionString)){
+            string sql = "SELECT * FROM [Plan] WHERE id = @pId";
+            p = db.QueryFirstOrDefault<Plan>(sql, new { pId = idPlan });
+        }
+        return p;
+    }
 }
