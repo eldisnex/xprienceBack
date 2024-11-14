@@ -614,6 +614,28 @@ section.block {
    min-width: 300px;
 }
 
+.categorieCard.notWidth {
+   width: 400px;
+   min-width: unset;
+   margin-top: 10px;
+}
+
+.containerNowWidth {
+   border: 1px solid #00000022;
+   border-radius: var(--radius1);
+   padding: 20px;
+}
+
+*::-webkit-scrollbar {
+   width: .5rem;
+   height: .5rem;
+}
+
+*::-webkit-scrollbar-thumb {
+   background-color: #ececec;
+   border-radius: 2px;
+}
+
 .categorieCard p {
    margin: 0;
    color: white;
@@ -1009,7 +1031,7 @@ section.flexSection {
    }
 }
 
-.inspirationCategories{
+.inspirationCategories {
    display: flex;
    gap: 20px;
    overflow-y: auto;
@@ -1019,6 +1041,6 @@ section.flexSection {
    border-radius: var(--radius1);
 }
 
-.inspirationCategories >*{
+.inspirationCategories > * {
    flex-shrink: 0;
 }

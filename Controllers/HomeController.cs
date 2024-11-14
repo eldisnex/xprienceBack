@@ -66,13 +66,6 @@ public class HomeController : Controller
         if (user != null)
             // Si esta logeado
             return RedirectToAction("IndexLogged");
-
-        // Response.Cookies.Delete("UserId");
-        // Response.Cookies.Append("UserId", "12345");
-        // Checkear si existe
-        // string usuario = Request.Cookies["UserId"];
-
-        // Console.WriteLine(usuario ?? "No hay usuario definido");
         if (TempData.ContainsKey("Error"))
             ViewData["Error"] = TempData["Error"]?.ToString();
         return View();
@@ -124,6 +117,7 @@ public class HomeController : Controller
             return RedirectToAction("Index");
         ViewBag.logged = true;
         ViewBag.user = user;
+        ViewBag.latest = BD.GetLatestPlan(user.id);
         return View();
     }
 
@@ -142,6 +136,7 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
+
         return View();
     }
 
@@ -154,6 +149,7 @@ public class HomeController : Controller
         List<Plan> plans = BD.GetPlans(user.id);
         ViewBag.dates = string.Join(",", plans.Select(x => x.date.Substring(0, 10)));
         ViewBag.names = string.Join(",", plans.Select(x => x.name));
+        ViewBag.ids = string.Join(",", plans.Select(x => x.id));
         return View();
     }
 
@@ -228,7 +224,8 @@ public class HomeController : Controller
         return Json(r);
     }
 
-    public async Task<IActionResult> GetRawImage(string id){
+    public async Task<IActionResult> GetRawImage(string id)
+    {
         Api api = new Api();
         var r = await api.getImage(id);
         string prefix = r.Split(",")[2].Split("\"")[3];

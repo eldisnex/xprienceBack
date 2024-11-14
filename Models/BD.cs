@@ -94,7 +94,17 @@ public static class BD
             p = db.QueryFirstOrDefault<Plan>(sql, new { pUserId = userId });
         }
         return p;
+    }
 
+    public static List<Plan> GetLatestPlan(int userId)
+    {
+        List<Plan> p;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT TOP 3 [Plan].* FROM [Plan] INNER JOIN PlanUser ON [Plan].id = PlanUser.idPlan INNER JOIN Users ON PlanUser.idUser = Users.id WHERE Users.id = @pUserId ORDER BY [Plan].id DESC";
+            p = db.Query<Plan>(sql, new { pUserId = userId }).ToList();
+        }
+        return p;
     }
 
     public static List<Plan> GetPlans(int userId)

@@ -15,9 +15,16 @@
    <button class="button nextButton">Next</button>
 </section>
 <script>
-   const dates = "@ViewBag.dates".split(",")
-   const names = "@ViewBag.names".split(",")
+   const dates = "@ViewBag.dates".split(",");
+   const names = "@ViewBag.names".split(",");
+   const ids = "@ViewBag.ids".split(",");
+   const idsDates = dates.reduce((acc, fecha, index) => {
+      acc[fecha] = ids[index];
+      return acc;
+}, {});
+
    const handleCerrar = '@Url.Action("HandleCreatePlan")';
+   const viewPlan = '@Url.Action("ViewPlan")';
    const endUrl = '@Url.Action("EndPlan")';
 </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

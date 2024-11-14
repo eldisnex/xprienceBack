@@ -55,6 +55,14 @@ const getHtmlFor = (year, month) => {
    document.querySelectorAll('li').forEach((e) => {
       if (subDates.some((date) => date[1] === Number(e.textContent))) {
          e.classList.add('event');
+         const fecha = new Date(year, month, e.textContent);
+         const fechaString = new Intl.DateTimeFormat('en-US', {
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric'
+         }).format(fecha);
+         e.onclick = () =>
+            (location.href = viewPlan + '?idPlan=' + idsDates[fechaString]);
       }
    });
 };

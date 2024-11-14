@@ -16,6 +16,40 @@
     </div>
     <div>
         <h4 class="rp">Categories</h4>
+        <div class="containerNowWidth" style="height: 500px; overflow-y: scroll;">
+            <div class="card2 categorieCard notWidth">
+                <img src="~/img/cat3.png" alt="" />
+                <div>
+                    <h2>Entertainment.</h2>
+                    <p>Laughter, pure fun</p>
+                    <a href='@Url.Action("Create", new {categorie="Entertainment"})' id="Entertainment">Add</a>
+                </div>
+            </div>
+            <div class="card2 categorieCard notWidth">
+                <img src="~/img/cat2.png" alt="" />
+                <div>
+                <h2>Gastronomy.</h2>
+                <p>Bold flavors, fresh ingredients.</p>
+                <a href='@Url.Action("Create", new {categorie="Gastronomy"})' id="Gastronomy">Add</a>
+                </div>
+            </div>
+            <div class="card2 categorieCard notWidth">
+                <img src="~/img/cat1.png" alt="" />
+                <div>
+                    <h2>Ambiental.</h2>
+                    <p>Soft light, fresh air</p>
+                    <a href='@Url.Action("Create", new {categorie="Ambiental"})' id="Ambiental">Add</a>
+                </div>
+            </div>
+            <div class="card2 categorieCard notWidth">
+                <img src="~/img/cat4.png" alt="" />
+                <div>
+                    <h2>Relax.</h2>
+                    <p>Deep peace, total relaxation.</p>
+                    <a href='@Url.Action("Create", new {categorie="Relax"})' id="Relax">Add</a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 <section class="bgSection">
@@ -25,4 +59,45 @@
     </div>
 </section>
 <h4 class="rp">Folders</h4>
+<section class="folderSection">
+    <div class="folders">
+        <a href='@Url.Action("ViewFolder", new { idFolder = -1 })' style="all:unset; cursor:pointer;">
+            <div class="folder">
+                <div class="imgContainer">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                    <img src="" alt="">
+                </div>
+                <h2>Created</h2>
+            </div>
+        </a>
+    </div>
+</section>
 <h4 class="rp">Latest plans</h4>
+<section class="folderSection">
+    <div class="folders" style="">
+        @foreach (Plan p in ViewBag.latest)
+        {
+            <a href='@Url.Action("ViewPlan", new { idPlan = p.id })' style="all:unset; cursor:pointer;">
+            <div class="folder">
+            <script>
+                const rawFsq_ids = '@p.fsq_ids';
+                const fsq_ids = rawFsq_ids.split(";").map((e)=> e.split(",")[0]);
+            </script>
+                <div class="imgContainer">
+                    @if(p.fsq_ids.Split(";").Count() >= 1){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[0].Split(",")[0]})' alt="">
+                    }
+                    @if(p.fsq_ids.Split(";").Count() >= 2){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[1].Split(",")[0]})' alt="">
+                    }
+                    @if(p.fsq_ids.Split(";").Count() >= 3){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[2].Split(",")[0]})' alt="">
+                    }
+                </div>
+                <h2>@p.name</h2>
+            </div>
+        </a>
+        }
+    </div>
+</section>
