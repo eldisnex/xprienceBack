@@ -7,7 +7,7 @@ const categories = {
    Ambiental: [16000]
 };
 
-$('form').submit((e) => onSent(e));
+$('form').submit((e) => createCardSection(e));
 
 const options = {};
 

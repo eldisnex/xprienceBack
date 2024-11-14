@@ -1008,3 +1008,17 @@ section.flexSection {
       background-position-x: 0px;
    }
 }
+
+.inspirationCategories{
+   display: flex;
+   gap: 20px;
+   overflow-y: auto;
+   width: var(--pageW);
+   border: 1px solid #00000022;
+   padding: 20px;
+   border-radius: var(--radius1);
+}
+
+.inspirationCategories >*{
+   flex-shrink: 0;
+}

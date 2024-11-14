@@ -1,0 +1,50 @@
+<h4 class="rp">Plans</h4>
+<section class="folderSection">
+    <div class="folders">
+        @foreach (Plan p in ViewBag.plans)
+        {
+            <a href='@Url.Action("ViewPlan", new { idPlan = p.id })' style="all:unset; cursor:pointer;">
+            <div class="folder">
+                <div class="imgContainer">
+                    @if(p.fsq_ids.Split(";").Count() >= 1){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[0].Split(",")[0]})' alt="">
+                    }
+                    @if(p.fsq_ids.Split(";").Count() >= 2){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[1].Split(",")[0]})' alt="">
+                    }
+                    @if(p.fsq_ids.Split(";").Count() >= 3){
+                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[2].Split(",")[0]})' alt="">
+                    }
+                </div>
+                <h2>@p.name</h2>
+            </div>
+        </a>
+        }
+    </div>
+</section>
+<template id="cardTemplate">
+            <div class="card">
+                <input type="checkbox" name="favorite" id="" class="favorite">
+                <label for=""></label>
+                <div class="coverImage">
+                </div>
+                <img src="" alt="" class="img" />
+                <div class="row">
+                    <h3></h3>
+                    <span class="stars"></span>
+                </div>
+                <p class="desc"></p>
+                <div class="row">
+                    <p class="people"></p>
+                    <button>
+                        <img src="~/img/svg/bookmark.svg" alt="Save" />
+                    </button>
+                </div>
+            </div>
+    </template>
+<script>
+    const handleCreateUrl = '@Url.Action("HandleCreate")';
+    const handleImage = '@Url.Action("HandleImage")';
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="~/js/inspiration.js"></script>

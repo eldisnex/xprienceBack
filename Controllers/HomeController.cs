@@ -132,7 +132,8 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
-        ViewBag.Plans = BD.ListPlan();
+        ViewBag.plans = BD.ListPlan();
+        ViewBag.logged = true;
         return View();
     }
 
@@ -207,6 +208,7 @@ public class HomeController : Controller
         Console.WriteLine(code);
         Api api = new Api();
         var r = await api.makeRequest(latitude, longitude, query, min, max, code);
+        Console.WriteLine(r);
         return Json(r);
     }
 

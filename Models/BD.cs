@@ -11,7 +11,7 @@ public static class BD
         List<Plan>? ListPlan = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT * FROM [Plan]";
+            string sql = "SELECT TOP 10 * FROM [Plan]";
             ListPlan = db.Query<Plan>(sql).ToList();
         }
         return ListPlan;
