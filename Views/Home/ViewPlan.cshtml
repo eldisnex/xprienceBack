@@ -1,0 +1,25 @@
+<section class="folderSection receivePlan">
+        <div class="items">
+    @foreach(string a in ViewBag.plan.fsq_ids.Split(";")){
+            <div class="item">
+                <div>
+                <h3 id = '@a.Split(",")[0]'></h3>
+                <p>@a.Split(",")[1]</p>
+                </div>
+                <button class="edit">
+                <img src="~/img/svg/edit.svg" alt="" />
+                </button>
+                <button class="delete">
+                <img src="~/img/svg/delete.svg" alt="" />
+                </button>
+            </div>
+    }
+    </div>
+    <h1>@ViewBag.plan.name</h1>
+</section>
+<script>
+    const handleDetails = '@Url.Action("HandleDetails")';
+</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="~/js/viewPlan.js"></script>
+<!-- @ViewBag.plan.name -->

@@ -242,13 +242,13 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult ViewPlan(int planId)
+    public IActionResult ViewPlan(int idPlan)
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        ViewBag.plan = BD.GetPlans(planId);
+        ViewBag.plan = BD.GetPlan(idPlan);
         return View();
     }
 
