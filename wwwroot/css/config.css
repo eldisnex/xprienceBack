@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.sidebar {
+    width: 25%;
+    padding: 20px;
+    background-color: #fff;
+    /* border-right: 2px solid #ddd; */
+    box-shadow: 1px 0 #ddd;
+    align-self: flex-start;
+
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    margin-bottom: 15px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.menu a.active {
+    font-weight: bold;
+}
+
+.main-content {
+    width: 75%;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+.input-group label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.input-group p {
+    color: gray;
+    margin-bottom: 10px;
+    font-size: smaller;
+}
+
+button {
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    background-color: #000;
+    float: right;
+}
+
+button:hover {
+    background-color: #38bd7d;
+    transition: 0.6s;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    margin-top: 40px;
+}
+
+.delete-account
+{
+    background-color: rgb(0, 0, 0);
+    
+}
+
+.delete-account:hover
+{
+    background-color: red;
+    transition: 0.6s;
+}
+
+.language-selection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main{
+    flex-direction: row;
+}
