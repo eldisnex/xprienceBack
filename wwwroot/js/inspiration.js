@@ -2,13 +2,13 @@
 
 const numbers = [10000, 14000, 17000, 18000, 13000, 16000];
 const categories = {
-   10000: "Arts and Entertainment",
-   13000: "Dining and Drinking",
-   14000: "Event",
-   16000: "Landmarks and Outdoors",
-   17000: "Retail",
-   18000: "Sports and Recreation",
-}
+   10000: 'Arts and Entertainment',
+   13000: 'Dining and Drinking',
+   14000: 'Event',
+   16000: 'Landmarks and Outdoors',
+   17000: 'Retail',
+   18000: 'Sports and Recreation'
+};
 
 const options = {};
 
@@ -53,7 +53,11 @@ const createCardSection = (num) => {
                      item.categories[0].name;
                   clone.querySelector('.stars').textContent = '4.5';
                   clone.querySelector('.people').textContent = 'For 2 people';
-                  clone.querySelector('.favorite').id = 'fav_' + item.fsq_id;
+                  const fav = clone.querySelector('.favorite');
+                  fav.id = 'fav_' + item.fsq_id;
+                  isChecked(item.fsq_id).then((r) => {
+                     fav.checked = r;
+                  });
                   clone
                      .querySelector('.favorite + label')
                      .setAttribute('for', 'fav_' + item.fsq_id);

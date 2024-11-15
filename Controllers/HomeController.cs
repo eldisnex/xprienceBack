@@ -178,13 +178,23 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult HandleLikePlan(int idPlan)
+    public IActionResult HandleLikePlace(string idPlan)
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
-        BD.LikePlan(idPlan, user.id);
+        BD.LikePlace(idPlan, user.id);
         return Json(new { liked = true });
+    }
+
+    [HttpPost]
+    public IActionResult IsChecked(string idPlan)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        bool r = BD.IsChecked(idPlan, user.id);
+        return Json(new { isChecked = r });
     }
 
     public IActionResult CreateCategories()

@@ -156,13 +156,23 @@ public static class BD
         }
     }
 
-    public static void LikePlan(int idPlan, int idUser)
+    public static void LikePlace(string fsqId, int idUser)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "EXEC LikePlan @pIdUser, @pIdPlan";
-            db.Execute(sql, new {pIdPlan = idPlan, pIdUser = idUser});
+            string sql = "EXEC LikePlace @pIdUser, @pFsqId";
+            db.Execute(sql, new {pFsqId = fsqId, pIdUser = idUser});
         }
+    }
+
+    public static bool IsChecked(string fsqId, int idUser){
+        bool r;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Punctuation WHERE idUsers = @pIdUser AND fsq_id = @pFsqId AND isFav = 1";
+            r = db.QueryFirstOrDefault<bool>(sql, new {pFsqId = fsqId, pIdUser = idUser});
+        }
+        return r;
     }
 
 }

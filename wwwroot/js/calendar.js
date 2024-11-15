@@ -4,6 +4,10 @@ const selectDay =
    location.href.split('?').length === 2 &&
    location.href.includes('selectDay=True');
 
+if (!selectDay) {
+   $('.nextButton').css('display', 'none');
+}
+
 const getHtmlFor = (year, month) => {
    const locale = 'es';
 
