@@ -156,4 +156,13 @@ public static class BD
         }
     }
 
+    public static void LikePlan(int idPlan, int idUser)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC LikePlan @pIdUser, @pIdPlan";
+            db.Execute(sql, new {pIdPlan = idPlan, pIdUser = idUser});
+        }
+    }
+
 }

@@ -6,7 +6,7 @@
                   alt="Avatar"
                   class="sidebar-avatar"
                />
-               <h3>@ViewBag.username</h3>
+               <h3 style="text-transform: capitalize;">@ViewBag.user.username</h3>
             </div>
             <ul class="menu">
                 <li><a href="#" class="active">Perfil</a></li>
@@ -26,7 +26,7 @@
                      class="profile-photo"
                   />
                   <div class="name-input">
-                     <label for="name">Nombre</label>
+                     <label for="name" style="text-transform: capitalize;">@ViewBag.user.username</label>
                      <p>@ViewBag.username</p>
                      <a href="#" class="add-photo-link">Añadir foto</a>
                       <button class="align-right" >Cambiar Nombre</button>
@@ -35,7 +35,7 @@
                <hr />
                <div class="input-group">
                   <label>Correo electrónico</label>
-                  <p>@ViewBag.mail</p>
+                  <p>@ViewBag.user.mail</p>
                   <button class="align-right">
                      Cambiar correo electrónico
                   </button>
@@ -44,7 +44,6 @@
                <hr />
                <div class="input-group">
                   <label>Contraseña</label>
-                  <p>**********</p>
                   <button class="align-right">Cambiar contraseña</button>
                </div>
                <hr />

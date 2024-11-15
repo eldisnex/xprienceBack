@@ -84,7 +84,7 @@ button {
     float: right;
 }
 
-button:hover {
+main button:hover {
     background-color: #38bd7d;
     transition: 0.6s;
 }

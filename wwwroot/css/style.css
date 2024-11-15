@@ -68,14 +68,70 @@ header nav ul li:hover a {
    background-size: 0 0.1em, 100% 0.1em;
 }
 
-header img {
+header img,
+header button {
    width: 32px;
    height: 32px;
    cursor: pointer;
 }
 
-header img.user {
+header img.user,
+header button {
    border-radius: var(--radius1);
+}
+
+/* ---- Profile nav ---- */
+
+header button {
+   all: unset;
+   width: 32px;
+   height: 32px;
+}
+
+header:has(button:focus) + .floatingNav,
+.floatingNav:has(*:hover) {
+   display: initial;
+}
+
+.floatingNav {
+   position: absolute;
+   right: calc((100vw - var(--pageW)) / 2 - 20px);
+   top: 100px;
+   width: 200px;
+   border-radius: var(--radius1);
+   box-shadow: var(--shadow);
+   background-color: white;
+   padding: 20px 10px;
+   display: none;
+   z-index: 1;
+   transition: all 3s;
+}
+
+.floatingNav img {
+   vertical-align: middle;
+   border-radius: 50%;
+}
+
+.floatingNav a {
+   display: inline-block;
+   padding: 10px;
+   box-shadow: var(--shadow);
+   border-radius: var(--radius1);
+   margin-left: 10px;
+   width: 60%;
+   background-color: white;
+   color: black;
+   text-decoration: none;
+}
+
+.floatingNav div {
+   margin-top: 30px;
+}
+
+.floatingNav .mainImg {
+   width: 20%;
+   margin-left: 50%;
+   translate: -50%;
 }
 
 /* ---- Main ---- */
@@ -627,8 +683,8 @@ section.block {
 }
 
 *::-webkit-scrollbar {
-   width: .5rem;
-   height: .5rem;
+   width: 0.5rem;
+   height: 0.5rem;
 }
 
 *::-webkit-scrollbar-thumb {

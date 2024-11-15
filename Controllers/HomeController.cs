@@ -23,7 +23,7 @@ public class HomeController : Controller
             // Si esta logeado
             ViewBag.logged = true;
         else ViewBag.logged = false;
-        
+
         return View();
     }
 
@@ -137,7 +137,7 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
-
+        ViewBag.logged = true;
         return View();
     }
 
@@ -175,6 +175,16 @@ public class HomeController : Controller
             return RedirectToAction("Index");
         bool created = BD.PlanCreated(plan, day, month, year, user.id);
         return Json(new { created = created, plan = BD.GetLastPlan(user.id) });
+    }
+
+    [HttpPost]
+    public IActionResult HandleLikePlan(int idPlan)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        BD.LikePlan(idPlan, user.id);
+        return Json(new { liked = true });
     }
 
     public IActionResult CreateCategories()
@@ -273,7 +283,7 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Logout()
+    public IActionResult LogOut()
     {
         Response.Cookies.Delete("UserId");
         return RedirectToAction("Index");
@@ -286,56 +296,58 @@ public class HomeController : Controller
     }
 
 
-     public IActionResult configurationProfile()
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    public IActionResult configurationProfile()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
-        ViewBag.username = user.username;
-        ViewBag.mail = user.mail;
+        ViewBag.user = user;
         return View();
-     }
-      public IActionResult configurationConfiguration()
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    }
+    public IActionResult configurationConfiguration()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
+        ViewBag.user = user;
         return View();
-     }
-     public IActionResult configurationNoti()
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    }
+    public IActionResult configurationNoti()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
+        ViewBag.user = user;
         return View();
-     }
-     public IActionResult configurationLang()
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    }
+    public IActionResult configurationLang()
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
+        ViewBag.user = user;
         return View();
-     }
-     public IActionResult ChangeUsername(string userChanged)
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    }
+    public IActionResult ChangeUsername(string userChanged)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
         BD.ChangeUsername(userChanged);
         return View();
-     }
-      public IActionResult ChangeMail(string mailChanged)
-     {
-         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+    }
+    public IActionResult ChangeMail(string mailChanged)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
         ViewBag.logged = true;
         BD.ChangeMail(mailChanged);
         return View();
-     }
+    }
 }
