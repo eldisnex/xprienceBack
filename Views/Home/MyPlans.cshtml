@@ -4,9 +4,22 @@
         <a href='@Url.Action("ViewFolder", new { idFolder = -1 })' style="all:unset; cursor:pointer;">
             <div class="folder">
                 <div class="imgContainer">
-                    <img src="" alt="">
-                    <img src="" alt="">
-                    <img src="" alt="">
+                    @if (ViewBag.created[0].fsq_ids.Split(";").Length >= 1)
+                    {
+
+                            <img src='@Url.Action("GetRawImage", new { id = ViewBag.created[0].fsq_ids.Split(";")[0].Split(",")[0] })'
+                                alt="">
+                    }
+                    @if (ViewBag.created[0].fsq_ids.Split(";").Length >= 2)
+                    {
+                            <img src='@Url.Action("GetRawImage", new { id = ViewBag.created[0].fsq_ids.Split(";")[1].Split(",")[0] })'
+                                alt="">
+                    }
+                    @if (ViewBag.created[0].fsq_ids.Split(";").Length >= 3)
+                    {
+                            <img src='@Url.Action("GetRawImage", new { id = ViewBag.created[0].fsq_ids.Split(";")[2].Split(",")[0] })'
+                                alt="">
+                    }
                 </div>
                 <h2>Created</h2>
             </div>

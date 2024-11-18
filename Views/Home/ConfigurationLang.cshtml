@@ -1,32 +1,33 @@
-      <link rel="stylesheet" href="~/css/config.css" />
+<link rel="stylesheet" href="~/css/config.css" />
 <nav class="sidebar">
-            <div class="profile">
-                <img src="https://lh3.googleusercontent.com/fife/ALs6j_Ff0uZEoxpi9w7OHuGvltti0SgbWKHj1noAd8ykCst4-OZxF4dVZldSEq2kPGu4muulMkFygrv_pZ-6YGsXSU45U3E6PlcvzmBL39pgAxtrtUhLRX6wWvx35fYOG8O5JcTGHV1J4aGSyt3Z6t1pH9ajcVQ4XmUjrq13llbz8zv2bNSAjuJFof2inKQXxevKGybG7_9NfnfiA1oMYWhQn7UIkvkkDCCwb0IeWCt-SRCZHdTNnQ_lkMz91eimY5BNqRaPp05KEqPQg_9KSZhQVDmCUEIjmgExPjyiQw5YI9rtCKKoLLEIfPlV3mkYyBWriPM5x3i4AZoDTS40EvMz1Racz198iQJOP1XJSyUfG3JMf43UQdDZNiexbigopPCgx39HrmESi5hTHVHjM4tFyqTvn4Auf9Ha8CyvFCmoA44RgEgsAuMbwcGbrwKi9dOKUBLrS2pNQzq3eQBvZa3Q2kFmDAkd0zm3LNPcjiXHpXp27tWFInY481j-RkHppvQuE56zoK0E5DDSA-a5AmMgu1XuX6A8p0x_9bAbJ1RYjowIjwuP4FoaYVLwIsNKj1HfB939D0DEoQlGYbd-UR2K2vYXaVB1sPZaVvYGEQWh0e6f26M6PnBehYGkCvXchjuHkfkK2amc2LSVj5l-OpfxIwaC55PZ6M5YIILQtLcC6SAN-9BM18ywW2QMxLwkM19Jg2saf-09f7lBNvi3dAMQ-Mb0zoBZrcqKaMBtcjyKnMXyybhcKXMsVxx6felWIXMfqOKqEWgdrGSlx3YphbmQFzW9NpK6x7aZP0AB0HbaE-l9HvRzZEaphmyVcCZSg9m8qD4GKgkAjUOBoCS4XeePZwYsF5eSnHJXZp_SOaxAUM4emkljMhYD1c3cdwMLG-BLkdCYC3CH_Lvb4iBBJGZC7Ej9LFp8wO8v8HoTbHHTf0a1qa18YtalAeRYrzO62BuwvNre9bJjNe5cGPBfa6N_0SRTQoYNAl_alL09RwI-Cmol7kH6gEU77f4ikai1F7Ac13qlOlqv-3hRX5S_X9tAL8dRf1D-dedfeIQK5RYWiXN3qWi7ppT2dJxOaZTRc-FDhfvtn8j4mLR8sIQdsov_I9tNnFMqhqsDgJLuEYnhlJaufcJrL-lwi2rfVxQPLMqn7e6zCv-6eWRKBYOQCTTyNupDu8ZK5tHi64TXB7pb4caW13eHaeh-Uj0YkNjkFJ9FIxcOLCUmtDhyNenC2mIojbIpOuVGVejJiCITT9ZUjFZB9RzjO0tDsx0CE8IbdtlhSrZqjhC9ObYMPqC9T2xemnrtfbtLuVEyK8g0fXZDRD_nxr_4v6_zo6DZ6YIdHdX50meh_bAxqg3ES5jRfLT3dI6TlcPF44KbA0pcg9gIBkx0A2RxmbZ6nS2QSzSDG3g=s32-c" alt="Avatar">
-                <h3 style="text-transform: capitalize;">@ViewBag.user.username</h3>
-            </div>
-            <ul class="menu">
-                <li><a href='@Url.Action("ConfigurationProfile")'>Perfil</a></li>
-                <li><a href='@Url.Action("ConfigurationConfiguration")'>Configuración</a></li>
-                <li><a href='@Url.Action("ConfigurationNoti")'>Notificaciones</a></li>
-                <li><a href="#" class="active">Idioma y región</a></li>
-            </ul>
-        </nav>
-        <div class="main-content">
-            <h1>Idioma y región</h1>
-            <hr>
-            <div class="input-group language-selection">
-                <div>
-                    <h5>Idioma</h5>
-                    <p>Elige el idioma que te gusta</p>
-                </div>
-                <form>
-                    <label for="language">Idioma:</label>
-                    <select id="language" name="language" style="padding: 5px;">
-                        <option value="es">Español</option>
-                        <option value="en">Inglés</option>
-                        <option value="fr">Francés</option>
-                        <option value="de">Alemán</option>
-                    </select>
-                </form>
-            </div>
+    <div class="profile">
+        <img src="https://t4.ftcdn.net/jpg/03/49/49/79/360_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.webp"
+            alt="Avatar">
+        <h3 style="text-transform: capitalize;">@ViewBag.user.username</h3>
+    </div>
+    <ul class="menu">
+        <li><a href='@Url.Action("ConfigurationProfile")'>Perfil</a></li>
+        <li><a href='@Url.Action("ConfigurationConfiguration")'>Configuración</a></li>
+        <li><a href='@Url.Action("ConfigurationNoti")'>Notificaciones</a></li>
+        <li><a href="#" class="active">Idioma y región</a></li>
+    </ul>
+</nav>
+<div class="main-content">
+    <h1>Idioma y región</h1>
+    <hr>
+    <div class="input-group language-selection">
+        <div>
+            <h5>Idioma</h5>
+            <p>Elige el idioma que te gusta</p>
         </div>
+        <form>
+            <label for="language">Idioma:</label>
+            <select id="language" name="language" style="padding: 5px;">
+                <option value="es">Español</option>
+                <option value="en">Inglés</option>
+                <option value="fr">Francés</option>
+                <option value="de">Alemán</option>
+            </select>
+        </form>
+    </div>
+</div>

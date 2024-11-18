@@ -110,6 +110,7 @@ header:has(button:focus) + .floatingNav,
 .floatingNav img {
    vertical-align: middle;
    border-radius: 50%;
+   width: 1.3rem;
 }
 
 .floatingNav a {
@@ -768,9 +769,20 @@ main div.card2 img {
    flex: 3;
 }
 
-.receivePlan .map {
+.receivePlan #map {
    flex: 2;
-   background-color: blue;
+   height: 50vh;
+   outline: none;
+   border-radius: var(--radius1);
+   box-shadow: var(--shadow);
+}
+
+.leaflet-control-zoom {
+   display: none !important;
+}
+
+.leaflet-bottom.leaflet-right {
+   display: none;
 }
 
 .receivePlan .items .item button {

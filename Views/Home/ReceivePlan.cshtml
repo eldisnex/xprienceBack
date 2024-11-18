@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <section class="receivePlan">
    <div class="items">
       <template id="itemTemplate">
@@ -16,15 +17,16 @@
          </div>
       </template>
    </div>
-   <div class="map"></div>
+   <div id="map"></div>
 </section>
 <section class="receivePlan">
    <button class="button nextButton">Next</button>
 </section>
 <script>
-    const handleDetails = '@Url.Action("HandleDetails")';
-    const calendar = '@Url.Action("Calendar")';
-    const categorie = '@ViewBag.categorie';
+   const handleDetails = '@Url.Action("HandleDetails")';
+   const calendar = '@Url.Action("Calendar")';
+   const categorie = '@ViewBag.categorie';
 </script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-<script src="~/js/receivePlan.js" ></script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="~/js/receivePlan.js"></script>

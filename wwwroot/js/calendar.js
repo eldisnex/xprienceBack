@@ -1,5 +1,9 @@
-let actualYear = 2024;
-let actualMonth = 0;
+let actualYear = new Date().getFullYear();
+let actualMonth = new Date().getMonth();
+const today = new Date().getDate();
+const thisMonth = actualMonth;
+const thisYear = actualYear;
+
 const selectDay =
    location.href.split('?').length === 2 &&
    location.href.includes('selectDay=True');
@@ -45,7 +49,13 @@ const getHtmlFor = (year, month) => {
                (day, index) =>
                   `<li ${index === 0 ? firstDayAttributes : ''} ${
                      selectDay ? 'select="true"' : ''
-                  }>${day + 1}</li>`
+                  } ${
+                     thisYear === actualYear &&
+                     actualMonth === thisMonth &&
+                     today === day + 1
+                        ? 'style="border: 1px solid blue;"'
+                        : ''
+                  } >${day + 1}</li>`
             )
             .join('');
          return `<div id="${monthName}_${actualYear}"><h1>${monthName} ${actualYear}</h1><ol>${htmlDaysName}${htmlDays}</ol></div>`;

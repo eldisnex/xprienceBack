@@ -119,6 +119,7 @@ public class HomeController : Controller
         ViewBag.logged = true;
         ViewBag.user = user;
         ViewBag.latest = BD.GetLatestPlan(user.id);
+        ViewBag.created = BD.GetPlans(user.id);
         return View();
     }
 
@@ -259,6 +260,7 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
+        ViewBag.logged = true;
         return View();
     }
 
