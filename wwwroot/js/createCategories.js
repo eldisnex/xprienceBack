@@ -12,4 +12,12 @@ for (var i = 0; i < localStorage.length; i++) {
    document.querySelector(`#${cat}`).textContent = categories[cat];
 }
 
-console.log(categories);
+document.getElementById('next').addEventListener('click', (e) => {
+   if (localStorage.length < 1) {
+      e.preventDefault();
+      $('#next').addClass('nextButtonAnim');
+      setTimeout(() => {
+         $('#next').removeClass('nextButtonAnim');
+      }, 300);
+   }
+});

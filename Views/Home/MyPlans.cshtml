@@ -24,5 +24,18 @@
                 <h2>Created</h2>
             </div>
         </a>
+        <form action='@Url.Action("CreateFolder")' method="POST" class="createFolderForm" >
+            <input type="text" name="folderName" class="largeInput" />
+            <br>
+            <select name="plan">
+                <option disabled>Select an option</option>
+                @foreach (Plan p in ViewBag.created)
+                {
+                    <option value="@p.id">@p.name</option>
+                }
+            </select>
+            <br>
+            <input type="submit" />
+        </form>
     </div>
 </section>

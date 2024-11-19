@@ -362,4 +362,14 @@ public class HomeController : Controller
         BD.ChangeMail(mailChanged);
         return View();
     }
+
+    [HttpPost]
+    public IActionResult CreateFolder(int plan, string folderName)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        BD.CreateFolder(user.id, folderName, plan);
+        return RedirectToAction("MyPlans");
+    }
 }

@@ -1112,3 +1112,36 @@ section.flexSection {
 .inspirationCategories > * {
    flex-shrink: 0;
 }
+
+.createFolderForm input,
+.createFolderForm select {
+   all: unset;
+   background-color: white;
+   /* border: 1px solid #00000022; */
+   box-shadow: var(--shadow);
+   border-radius: var(--radius1);
+   padding: 10px;
+   margin: 10px;
+   position: relative;
+}
+
+.createFolderForm input:hover,
+.createFolderForm select:hover {
+   filter: brightness(0.95);
+}
+
+.createFolderForm input[type='submit'] {
+   background-image: url('../img/svg/add.svg');
+   background-repeat: no-repeat;
+   background-size: cover;
+   aspect-ratio: 1/1;
+   color: transparent;
+   cursor: pointer;
+}
+
+.createFolderForm select {
+   background-image: url('../img/svg/arrowDown.svg');
+   background-repeat: no-repeat;
+   background-size: contain;
+   background-position-x: 100%;
+}

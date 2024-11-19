@@ -43,6 +43,12 @@ const createLine = (item) => {
    clone.querySelector('h3').textContent = item.name;
    const timeInput = clone.querySelector('.receiveTime');
    timeInput.id = 'time_' + item.fsq_id;
+   const DELETE = clone.querySelector('.delete');
+   DELETE.id = 'delete_' + item.fsq_id;
+   DELETE.addEventListener('click', (e) => {
+      localStorage.removeItem(item.fsq_id);
+      location.reload();
+   });
    const info = localStorage.getItem(item.fsq_id);
    const arrInfo = info.split(',');
    if (arrInfo.length === 2) {
