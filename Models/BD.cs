@@ -119,31 +119,60 @@ public static class BD
 
     }
 
-    public static List<Plan> GetFolder(int folderId, int userId){
+    public static List<Plan> GetFolder(int folderId, int userId)
+    {
         List<Plan>? ListPlan = null;
-        using(SqlConnection db = new SqlConnection(_connectionString))
+        using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "EXEC GetFolder @pIdFolder, @pUserId";
-            ListPlan = db.Query<Plan>(sql, new {pIdFolder = folderId, pUserId = userId }).ToList();
+            ListPlan = db.Query<Plan>(sql, new { pIdFolder = folderId, pUserId = userId }).ToList();
         }
         return ListPlan;
     }
 
-    public static Plan GetPlan(int idPlan){
+    public static List<Folder> GetFolders(int userId)
+    {
+        List<Folder> listFolders = null;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT Folder.* FROM Folder INNER JOIN FolderPlan ON Folder.id = FolderPlan.idFolder INNER JOIN PlanUser ON PlanUser.id = FolderPlan.idPlan WHERE idUser = @pId";
+            listFolders = db.Query<Folder>(sql, new { pId = userId }).ToList();
+        }
+        return listFolders;
+    }
+
+    public static Dictionary<Folder, List<Plan>> GetPlansByFolder(List<Folder> f){
+        Dictionary<Folder, List<Plan>> r = new Dictionary<Folder, List<Plan>>();
+        foreach (Folder folder in f)
+        {
+            List<Plan> listFolders = null;
+            using (SqlConnection db = new SqlConnection(_connectionString))
+            {
+                string sql = "SELECT [Plan].* FROM Folder INNER JOIN FolderPlan ON Folder.id = FolderPlan.idFolder INNER JOIN PlanUser ON PlanUser.id = FolderPlan.idPlan INNER JOIN [Plan] ON [Plan].id = PlanUser.idPlan WHERE Folder.id = @pId";
+                listFolders = db.Query<Plan>(sql, new { pId = folder.id }).ToList();
+            }
+            r.Add(folder, listFolders);
+        }
+        return r;
+    }
+
+    public static Plan GetPlan(int idPlan)
+    {
         Plan p;
-        using(SqlConnection db = new SqlConnection(_connectionString)){
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
             string sql = "SELECT * FROM [Plan] WHERE id = @pId";
             p = db.QueryFirstOrDefault<Plan>(sql, new { pId = idPlan });
         }
         return p;
     }
 
-     public static void ChangeUsername(string userChanged)
+    public static void ChangeUsername(string userChanged)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "UPDATE Users SET @puserChanged = username";
-            db.Execute(sql, new {puserChanged = userChanged});
+            db.Execute(sql, new { puserChanged = userChanged });
         }
     }
 
@@ -152,7 +181,7 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "UPDATE Users SET @pmailChanged = mail";
-            db.Execute(sql, new {pmailChanged = mailChanged});
+            db.Execute(sql, new { pmailChanged = mailChanged });
         }
     }
 
@@ -161,16 +190,37 @@ public static class BD
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "EXEC LikePlace @pIdUser, @pFsqId";
-            db.Execute(sql, new {pFsqId = fsqId, pIdUser = idUser});
+            db.Execute(sql, new { pFsqId = fsqId, pIdUser = idUser });
         }
     }
 
-    public static bool IsChecked(string fsqId, int idUser){
+    public static bool IsChecked(string fsqId, int idUser)
+    {
         bool r;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
             string sql = "SELECT * FROM Punctuation WHERE idUsers = @pIdUser AND fsq_id = @pFsqId AND isFav = 1";
-            r = db.QueryFirstOrDefault<bool>(sql, new {pFsqId = fsqId, pIdUser = idUser});
+            r = db.QueryFirstOrDefault<bool>(sql, new { pFsqId = fsqId, pIdUser = idUser });
+        }
+        return r;
+    }
+
+    public static void ChangePlanName(int id, string name)
+    {
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "UPDATE [Plan] SET [name] = @pName WHERE id = @pId";
+            db.Execute(sql, new { pName = name, pId = id });
+        }
+    }
+
+    public static bool CreateFolder(int userId, string name, int planId)
+    {
+        bool r;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC AddFolder @pUserId, @pPlanId, @pName";
+            r = db.Execute(sql, new { pName = name, pUserId = userId, pPlanId = planId }) == 2;
         }
         return r;
     }

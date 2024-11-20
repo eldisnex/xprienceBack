@@ -4,25 +4,32 @@
         @foreach (Plan p in ViewBag.folder)
         {
             <a href='@Url.Action("ViewPlan", new { idPlan = p.id })' style="all:unset; cursor:pointer;">
-            <div class="folder">
-            <script>
-                const rawFsq_ids = '@p.fsq_ids';
-                const fsq_ids = rawFsq_ids.split(";").map((e)=> e.split(",")[0]);
-            </script>
-                <div class="imgContainer">
-                    @if(p.fsq_ids.Split(";").Count() >= 1){
-                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[0].Split(",")[0]})' alt="">
-                    }
-                    @if(p.fsq_ids.Split(";").Count() >= 2){
-                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[1].Split(",")[0]})' alt="">
-                    }
-                    @if(p.fsq_ids.Split(";").Count() >= 3){
-                        <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[2].Split(",")[0]})' alt="">
-                    }
+                <div class="folder">
+                    <script>
+                        const rawFsq_ids = '@p.fsq_ids';
+                        const fsq_ids = rawFsq_ids.split(";").map((e)=> e.split(",")[0]);
+                    </script>
+                    <div class="imgContainer">
+                        @if(p.fsq_ids.Split(";").Count() >= 1){
+                            <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[0].Split(",")[0]})' alt="">
+                        }
+                        @if(p.fsq_ids.Split(";").Count() >= 2){
+                            <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[1].Split(",")[0]})' alt="">
+                        }
+                        @if(p.fsq_ids.Split(";").Count() >= 3){
+                            <img src='@Url.Action("GetRawImage", new { id = p.fsq_ids.Split(";")[2].Split(",")[0]})' alt="">
+                        }
+                    </div>
+                    <input type="text" value="@p.name" id="input_@p.id"  disabled />
+                    <button class="edit">
+                        <img src="~/img/svg/edit.svg" alt="" />
+                    </button>
                 </div>
-                <h2>@p.name</h2>
-            </div>
-        </a>
+            </a>
         }
     </div>
 </section>
+<script>
+    const handleChangeNameUrl = '@Url.Action("HandleChangeName")';
+</script>
+<script src="~/js/changeName.js" ></script>

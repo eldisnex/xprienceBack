@@ -1,6 +1,8 @@
 <section class="folderSection">
     <h1>Folders</h1>
     <div class="folders">
+    @if(ViewBag.created.Count == 1){
+
         <a href='@Url.Action("ViewFolder", new { idFolder = -1 })' style="all:unset; cursor:pointer;">
             <div class="folder">
                 <div class="imgContainer">
@@ -24,6 +26,18 @@
                 <h2>Created</h2>
             </div>
         </a>
+    }
+    @foreach (Folder folder in ViewBag.folders)
+    {
+        <a href='@Url.Action("ViewFolder", new { idFolder = folder.id })' style="all:unset; cursor:pointer;">
+            <div class="folder">
+                <div class="imgContainer">
+                    
+                </div>
+                <h2>@folder.name</h2>
+            </div>
+        </a>
+    }
         <form action='@Url.Action("CreateFolder")' method="POST" class="createFolderForm" >
             <input type="text" name="folderName" class="largeInput" />
             <br>

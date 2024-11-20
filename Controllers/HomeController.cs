@@ -246,6 +246,17 @@ public class HomeController : Controller
         return Json(r);
     }
 
+    [HttpPost]
+    public async Task<IActionResult> HandleChangeName(int id, string name)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("Index");
+        ViewBag.logged = true;
+        BD.ChangePlanName(id, name);
+        return Json(new { changed = true });
+    }
+
     public async Task<IActionResult> GetRawImage(string id)
     {
         Api api = new Api();
@@ -281,6 +292,8 @@ public class HomeController : Controller
             return RedirectToAction("Index");
         ViewBag.logged = true;
         ViewBag.created = BD.GetPlans(user.id);
+        ViewBag.folders = BD.GetFolders(user.id);
+        ViewBag.folderPlans = BD.GetPlansByFolder(ViewBag.folders);
         return View();
     }
 
@@ -369,7 +382,10 @@ public class HomeController : Controller
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("Index");
-        BD.CreateFolder(user.id, folderName, plan);
+        // Console.WriteLine(plan);
+        // Console.WriteLine(folderName);
+        bool a = BD.CreateFolder(user.id, folderName, plan);
+        Console.WriteLine(a);
         return RedirectToAction("MyPlans");
     }
 }
