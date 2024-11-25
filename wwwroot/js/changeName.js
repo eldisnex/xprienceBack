@@ -9,7 +9,7 @@ $('.edit').on('click', (e) => {
 
 input.on('blur', (e) => {
    $.post(handleChangeNameUrl, {
-      id: input.attr('id').split('_')[1],
-      name: input.val()
+      id: e.target.id.split("_")[1],
+      name: e.target.value
    });
 });

@@ -1,5 +1,5 @@
 <section class="folderSection">
-    <h1>Plans</h1>
+    <h1>@ViewBag.folderObj.name</h1>
     <div class="folders">
         @foreach (Plan p in ViewBag.folder)
         {
@@ -28,6 +28,20 @@
             </a>
         }
     </div>
+    @if (ViewBag.folderObj.id != -1){
+    <form action='@Url.Action("AddToFolder")' method="POST" class="createFolderForm" >     
+            <input name="idFolder" value="@ViewBag.folderObj.id" type="hidden" />
+            <select name="plan">
+                <option disabled>Select an option</option>
+                @foreach (Plan p in ViewBag.created)
+                {
+                    <option value="@p.id">@p.name</option>
+                }
+            </select>
+            <br>
+            <input type="submit" />
+    </form>
+    }
 </section>
 <script>
     const handleChangeNameUrl = '@Url.Action("HandleChangeName")';

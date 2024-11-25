@@ -47,7 +47,8 @@ body {
  }
  
  input[type='text'],
- input[type='password'] {
+ input[type='password'],
+ input[type='email'] {
     background-color: var(--color1);
     border-radius: 2px;
     padding: 10px;

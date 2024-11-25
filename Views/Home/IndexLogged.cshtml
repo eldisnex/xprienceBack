@@ -86,6 +86,17 @@
                 <h2>Created</h2>
             </div>
         </a>
+        @foreach (Folder folder in ViewBag.folders)
+        {
+            <a href='@Url.Action("ViewFolder", new { idFolder = folder.id })' style="all:unset; cursor:pointer;">
+                <div class="folder">
+                    <div class="imgContainer">
+                        
+                    </div>
+                    <h2>@(folder.name.Length < 15 ? @folder.name : @folder.name.Substring(0, 15) + "...")</h2>
+                </div>
+            </a>
+        }
     </div>
 </section>
 <h4 class="rp">Latest plans</h4>

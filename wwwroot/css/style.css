@@ -202,6 +202,17 @@ a.button.back::before {
    content: '⬅';
 }
 
+a.button.next::after {
+   content: '⮕';
+   color: transparent;
+   transition: all 0.3s;
+   margin-left: 10px;
+}
+
+a.button.next:hover::after {
+   color: white;
+}
+
 a.button:not(.notBefore):hover::before {
    color: white;
 }
@@ -631,6 +642,7 @@ section.block {
    width: var(--pageW);
    justify-content: space-between;
    margin-top: 80px;
+   flex-direction: row-reverse;
 }
 
 #closeBlock {
@@ -1116,7 +1128,8 @@ section.flexSection {
 }
 
 .createFolderForm input,
-.createFolderForm select {
+.createFolderForm select,
+.settingsInput {
    all: unset;
    background-color: white;
    /* border: 1px solid #00000022; */

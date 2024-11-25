@@ -77,7 +77,6 @@ public class HomeController : Controller
     {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(mail) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(verifyPassword))
         {
-            Console.WriteLine("Hola");
             TempData["Error"] = "No se pasaron todos los parametros";
             return RedirectToAction("SignUp");
         }
@@ -115,11 +114,12 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.user = user;
         ViewBag.latest = BD.GetLatestPlan(user.id);
         ViewBag.created = BD.GetPlans(user.id);
+        ViewBag.folders = BD.GetFolders(user.id);
         return View();
     }
 
@@ -127,7 +127,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.plans = BD.ListPlan();
         ViewBag.logged = true;
         return View();
@@ -137,7 +137,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         return View();
     }
@@ -146,7 +146,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         List<Plan> plans = BD.GetPlans(user.id);
         ViewBag.dates = string.Join(",", plans.Select(x => x.date.Substring(0, 10)));
@@ -159,9 +159,9 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
-        string link = Url.Action("ViewPlan", new { planId = id }) ?? "";
+        string link = Url.Action("ViewPlan", new { idPlan = id }) ?? "";
         QR qr = new QR(link);
         ViewBag.qr = qr.create();
         ViewBag.link = link;
@@ -173,7 +173,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         bool created = BD.PlanCreated(plan, day, month, year, user.id);
         return Json(new { created = created, plan = BD.GetLastPlan(user.id) });
     }
@@ -183,7 +183,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         BD.LikePlace(idPlan, user.id);
         return Json(new { liked = true });
     }
@@ -193,7 +193,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         bool r = BD.IsChecked(idPlan, user.id);
         return Json(new { isChecked = r });
     }
@@ -202,7 +202,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         return View();
     }
@@ -212,7 +212,7 @@ public class HomeController : Controller
         string[] cats = { "Relax", "Ambiental", "Entertainment", "Gastronomy" };
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         if (!cats.Contains(categorie))
             return RedirectToAction("Create", new { categorie = "Entertainment" });
@@ -223,10 +223,8 @@ public class HomeController : Controller
     [HttpPost]
     public async Task<IActionResult> HandleCreate(string latitude, string longitude, string query, int min, int max, string code)
     {
-        Console.WriteLine(code);
         Api api = new Api();
         var r = await api.makeRequest(latitude, longitude, query, min, max, code);
-        Console.WriteLine(r);
         return Json(r);
     }
 
@@ -251,7 +249,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         BD.ChangePlanName(id, name);
         return Json(new { changed = true });
@@ -270,7 +268,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         return View();
     }
@@ -279,7 +277,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.plan = BD.GetPlan(idPlan);
         return View();
@@ -289,7 +287,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.created = BD.GetPlans(user.id);
         ViewBag.folders = BD.GetFolders(user.id);
@@ -301,10 +299,11 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
+        ViewBag.created = BD.GetPlans(user.id);
         ViewBag.folder = BD.GetFolder(idFolder, user.id);
-        // Console.WriteLine(ViewBag.folder[0].fsq_ids.Split(";")[0].Split(",")[0]);
+        ViewBag.folderObj = BD.GetFolderName(idFolder);
         return View();
     }
 
@@ -325,7 +324,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.user = user;
         return View();
@@ -334,7 +333,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.user = user;
         return View();
@@ -343,7 +342,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.user = user;
         return View();
@@ -352,7 +351,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         ViewBag.user = user;
         return View();
@@ -361,7 +360,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         BD.ChangeUsername(userChanged);
         return View();
@@ -370,7 +369,7 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
+            return RedirectToAction("LogIn");
         ViewBag.logged = true;
         BD.ChangeMail(mailChanged);
         return View();
@@ -381,11 +380,18 @@ public class HomeController : Controller
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
-            return RedirectToAction("Index");
-        // Console.WriteLine(plan);
-        // Console.WriteLine(folderName);
+            return RedirectToAction("LogIn");
         bool a = BD.CreateFolder(user.id, folderName, plan);
-        Console.WriteLine(a);
         return RedirectToAction("MyPlans");
+    }
+
+    [HttpPost]
+    public IActionResult AddToFolder(int plan, int idFolder)
+    {
+        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
+        if (user == null)
+            return RedirectToAction("LogIn");
+        BD.AddToFolder(idFolder, user.id, plan);
+        return RedirectToAction("ViewFolder", new { idFolder = idFolder });
     }
 }

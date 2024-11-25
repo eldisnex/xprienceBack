@@ -141,7 +141,8 @@ public static class BD
         return listFolders;
     }
 
-    public static Dictionary<Folder, List<Plan>> GetPlansByFolder(List<Folder> f){
+    public static Dictionary<Folder, List<Plan>> GetPlansByFolder(List<Folder> f)
+    {
         Dictionary<Folder, List<Plan>> r = new Dictionary<Folder, List<Plan>>();
         foreach (Folder folder in f)
         {
@@ -225,4 +226,32 @@ public static class BD
         return r;
     }
 
+    public static bool AddToFolder(int folderId, int userId, int planId)
+    {
+        bool r;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "EXEC AddToFolder @pIdFolder, @pIdUser, @pIdPlan";
+            r = db.Execute(sql, new { pIdFolder = folderId, pIdUser = userId, pIdPlan = planId }) == 1;
+        }
+        return r;
+    }
+
+    public static Folder GetFolderName(int folderId)
+    {
+        if (folderId == -1)
+        {
+            Folder f = new Folder();
+            f.id = -1;
+            f.name = "Created";
+            return f;
+        }
+        Folder r;
+        using (SqlConnection db = new SqlConnection(_connectionString))
+        {
+            string sql = "SELECT * FROM Folder WHERE id = @pId";
+            r = db.QueryFirstOrDefault<Folder>(sql, new { pId = folderId });
+        }
+        return r;
+    }
 }

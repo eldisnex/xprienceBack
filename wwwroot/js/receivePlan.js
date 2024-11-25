@@ -1,3 +1,7 @@
+if (localStorage.length === 0) {
+   window.history.back();
+}
+
 // ---- Map ----
 const map = L.map('map');
 
@@ -70,6 +74,7 @@ $('.nextButton').click(() => {
          setTimeout(() => {
             $('.nextButton').removeClass('nextButtonAnim');
          }, 300);
+         alert('Places must have time assigned');
          return;
       }
    }

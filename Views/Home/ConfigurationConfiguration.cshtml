@@ -6,44 +6,44 @@
         <h3 style="text-transform: capitalize;">@ViewBag.user.username</h3>
     </div>
     <ul class="menu">
-        <li><a href='@Url.Action("ConfigurationProfile")'>Perfil</a></li>
-        <li><a href="#" class="active">Configuración</a></li>
-        <li><a href='@Url.Action("ConfigurationNoti")'>Notificaciones</a></li>
-        <li><a href='@Url.Action("ConfigurationLang")'>Idioma y región</a></li>
+        <li><a href='@Url.Action("ConfigurationProfile")'>Profile</a></li>
+        <li><a href="#" class="active">Configuration</a></li>
+        <li><a href='@Url.Action("ConfigurationNoti")'>Notifications</a></li>
+        <li><a href='@Url.Action("ConfigurationLang")'>Language & region</a></li>
     </ul>
 </nav>
 <div class="main-content">
-    <h1>Configuración</h1>
+    <h1>Configuration</h1>
     <div class="input-group">
-        <label>Apariencia</label>
-        <p>Personaliza el aspecto de Xperience en tu dispositivo.</p>
-        <button>Usar la configuración del sistema</button>
+        <label>Appearance</label>
+        <p>Customize the look of Xperience on your device.</p>
+        <button>Use system settings</button>
     </div>
     <hr>
     <div class="input-group">
-        <label>Inicio</label>
+        <label>Start</label>
         <div class="input-group">
             <input type="checkbox">
-            <p>Elige qué mostrar cuando Xprience se inicie o cuando cambies de pantalla.</p>
-            <button>Página de inicio</button>
+            <p>Choose what to show when Xprience starts or when you change screens.</p>
+            <button>Home page</button>
         </div>
     </div>
     <hr>
     <div class="input-group">
-        <label>Fecha y hora</label>
+        <label>Date and time</label>
         <div class="input-group">
             <input type="checkbox" checked>
-            <h5>Establecer automáticamente la zona horaria según mi ubicación</H5>
-            <P>Los recordatorios, las notificaciones y correos electrónicos se enviarán teniendo en
-                cuenta tu zona horaria.</P>
+            <h5>Automatically set time zone based on my location</H5>
+            <P>Reminders, notifications and emails will be sent taking into account
+                count your time zone.</P>
         </div>
-        <h5>Zona horaria</h5>
-        <p>Zona horaria actual: [GMT-03:00] América/Buenos Aires (GMT-3)</p>
+        <h5>Time zone</h5>
+        <p>Current time zone: [GMT-03:00] America/Buenos Aires (GMT-3)</p>
     </div>
     <hr>
     <div class="input-group">
-        <label>Privacidad</label>
-        <p>Perzonaliza las cookies. Consulta más dettales en el Aviso sobre cookies</p>
-        <button>Personalizar</button>
+        <label>Privacy</label>
+        <p>Customize cookies. See more details in the Cookie Notice</p>
+        <button>Personalize</button>
     </div>
 </div>

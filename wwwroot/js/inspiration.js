@@ -52,7 +52,7 @@ const createCardSection = (num) => {
                   clone.querySelector('.desc').textContent =
                      item.categories[0].name;
                   clone.querySelector('.stars').textContent = '4.5';
-                  clone.querySelector('.people').textContent = 'For 2 people';
+                  // clone.querySelector('.people').textContent = 'For 2 people';
                   const fav = clone.querySelector('.favorite');
                   fav.id = 'fav_' + item.fsq_id;
                   isChecked(item.fsq_id).then((r) => {
