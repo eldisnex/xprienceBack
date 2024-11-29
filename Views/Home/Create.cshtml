@@ -55,6 +55,9 @@
         <img src="~/img/svg/closeFullscreen.svg" alt="">
     </label>
 </section>
+<div class="pathButtons">
+    <a href='@Url.Action("CreateCategories")' class="button notBefore next">Next</a>
+</div>
 <div class="cardContainerFlex">
     <template id="subCardTemplate">
         <div class="subCard">
@@ -79,9 +82,6 @@
             <button class="button small" onclick="add(this)">Add</button>
         </div>
     </template>
-</div>
-<div class="pathButtons">
-    <a href='@Url.Action("CreateCategories")' class="button notBefore next">Next</a>
 </div>
 <script>
     const handleCreateUrl = '@Url.Action("HandleCreate")';

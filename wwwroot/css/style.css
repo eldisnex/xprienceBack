@@ -1146,11 +1146,6 @@ section.flexSection {
 }
 
 .createFolderForm input[type='submit'] {
-   background-image: url('../img/svg/add.svg');
-   background-repeat: no-repeat;
-   background-size: cover;
-   aspect-ratio: 1/1;
-   color: transparent;
    cursor: pointer;
 }
 
