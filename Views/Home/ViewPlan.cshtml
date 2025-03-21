@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 <section class="folderSection receivePlan">
         <div class="items">
     @foreach(string a in ViewBag.plan.fsq_ids.Split(";")){
@@ -10,9 +11,12 @@
     }
     </div>
     <h1>@ViewBag.plan.name</h1>
+    <div id="map"></div>
 </section>
+   
 <script>
     const handleDetails = '@Url.Action("HandleDetails")';
 </script>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="~/js/viewPlan.js"></script>

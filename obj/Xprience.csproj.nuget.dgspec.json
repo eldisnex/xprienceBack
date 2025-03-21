@@ -1,26 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj": {}
+    "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj": {}
   },
   "projects": {
-    "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj": {
+    "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj",
+        "projectUniqueName": "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj",
         "projectName": "Xprience",
-        "projectPath": "D:\\Uriel\\Descargas\\xprienceBack\\Xprience.csproj",
-        "packagesPath": "C:\\Users\\ulest\\.nuget\\packages\\",
-        "outputPath": "D:\\Uriel\\Descargas\\xprienceBack\\obj\\",
+        "projectPath": "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj",
+        "packagesPath": "C:\\Users\\48179712\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\48179712\\Desktop\\xprienceBack\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ulest\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\48179712\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -84,7 +85,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

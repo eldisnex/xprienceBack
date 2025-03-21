@@ -39,6 +39,7 @@ const createLine = (item) => {
       );
    if (markers.length === 1) {
       map.setView(Object.values(markers[0].geocodes.main), 13);
+      console.log("A:", markers[0].geocodes.main)
       m.openPopup();
    }
    console.log(item);
