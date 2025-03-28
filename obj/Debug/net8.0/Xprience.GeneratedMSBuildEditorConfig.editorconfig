@@ -9,111 +9,111 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Xprience
 build_property.RootNamespace = Xprience
-build_property.ProjectDir = C:\Users\48179712\Desktop\xprienceBack\
+build_property.ProjectDir = C:\Users\48313356\Downloads\fsdf\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\48179712\Desktop\xprienceBack
+build_property.MSBuildProjectDirectory = C:\Users\48313356\Downloads\fsdf
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Calendar.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWxlbmRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationConfiguration.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ConfigurationConfiguration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uQ29uZmlndXJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationLang.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ConfigurationLang.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uTGFuZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationNoti.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ConfigurationNoti.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uTm90aS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/configurationProfile.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/configurationProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb25maWd1cmF0aW9uUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Create.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/CreateCategories.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/CreateCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/EndPlan.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/EndPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbmRQbGFuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Explore.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Explore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeHBsb3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Index.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/IndexLogged.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/IndexLogged.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2dlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Inspiration.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Inspiration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNwaXJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/login.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/MyPlans.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/MyPlans.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVBsYW5zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Privacy.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ReceivePlan.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ReceivePlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNlaXZlUGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Signup.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ViewFolder.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ViewFolder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3Rm9sZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ViewPlan.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Home/ViewPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3UGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/Error.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_Layout.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_Layout2.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/_ViewImports.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/_ViewStart.cshtml]
+[C:/Users/48313356/Downloads/fsdf/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

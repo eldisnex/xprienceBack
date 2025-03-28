@@ -12,11 +12,14 @@
 * {
    font-family: 'Nunito Sans';
    /* font-family: 'Uber Move Text', sans-serif; */
+   transition: background-color .3s;
+
 }
 
 body {
    margin: 0;
    overflow-x: hidden;
+   background-color: var(--color1);
 }
 
 header {
