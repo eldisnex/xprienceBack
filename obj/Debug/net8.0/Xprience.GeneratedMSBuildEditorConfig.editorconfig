@@ -9,111 +9,111 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Xprience
 build_property.RootNamespace = Xprience
-build_property.ProjectDir = C:\Users\48179712\Desktop\xprienceBack\
+build_property.ProjectDir = c:\Users\48179712\Desktop\bgfh\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\48179712\Desktop\xprienceBack
+build_property.MSBuildProjectDirectory = c:\Users\48179712\Desktop\bgfh
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Calendar.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Calendar.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDYWxlbmRhci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationConfiguration.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ConfigurationConfiguration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uQ29uZmlndXJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationLang.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ConfigurationLang.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uTGFuZy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ConfigurationNoti.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ConfigurationNoti.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25maWd1cmF0aW9uTm90aS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/configurationProfile.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/configurationProfile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxjb25maWd1cmF0aW9uUHJvZmlsZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Create.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/CreateCategories.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/CreateCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDcmVhdGVDYXRlZ29yaWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/EndPlan.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/EndPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFbmRQbGFuLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Explore.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Explore.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxFeHBsb3JlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Index.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/IndexLogged.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/IndexLogged.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleExvZ2dlZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Inspiration.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Inspiration.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbnNwaXJhdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/login.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/MyPlans.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/MyPlans.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxNeVBsYW5zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Privacy.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ReceivePlan.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ReceivePlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWNlaXZlUGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/Signup.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/Signup.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTaWdudXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ViewFolder.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ViewFolder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3Rm9sZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Home/ViewPlan.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Home/ViewPlan.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWaWV3UGxhbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/Error.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_Layout.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_Layout2.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Shared/_Layout2.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/Shared/_ValidationScriptsPartial.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/_ViewImports.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/48179712/Desktop/xprienceBack/Views/_ViewStart.cshtml]
+[c:/Users/48179712/Desktop/bgfh/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

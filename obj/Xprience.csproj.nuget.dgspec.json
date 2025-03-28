@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj": {}
+    "C:\\Users\\48179712\\Desktop\\bgfh\\Xprience.csproj": {}
   },
   "projects": {
-    "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj": {
+    "C:\\Users\\48179712\\Desktop\\bgfh\\Xprience.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj",
+        "projectUniqueName": "C:\\Users\\48179712\\Desktop\\bgfh\\Xprience.csproj",
         "projectName": "Xprience",
-        "projectPath": "C:\\Users\\48179712\\Desktop\\xprienceBack\\Xprience.csproj",
+        "projectPath": "C:\\Users\\48179712\\Desktop\\bgfh\\Xprience.csproj",
         "packagesPath": "C:\\Users\\48179712\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\48179712\\Desktop\\xprienceBack\\obj\\",
+        "outputPath": "C:\\Users\\48179712\\Desktop\\bgfh\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\48179712\\AppData\\Roaming\\NuGet\\NuGet.Config",
