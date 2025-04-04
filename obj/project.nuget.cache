@@ -1,14 +1,8 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "DDbT82T2FwM=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\48179712\\Desktop\\bgfh\\Xprience.csproj",
-=======
-  "dgSpecHash": "hbHZsRNCtsGWHP7ah6snNjFjbQ8vxfvS9Dcqv6JR5JDXoU2uJgexiEb1bC4TbHKHbSF+GDicKEmqoYTmjKLkpA==",
+  "dgSpecHash": "X2cWnzcX69A=",
   "success": true,
   "projectFilePath": "C:\\Users\\48674459\\Downloads\\xprienceBack\\Xprience.csproj",
->>>>>>> planCalendario
   "expectedPackageFiles": [
     "C:\\Users\\48674459\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\48674459\\.nuget\\packages\\jobject\\1.0.0\\jobject.1.0.0.nupkg.sha512",

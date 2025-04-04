@@ -281,6 +281,7 @@ public class HomeController : Controller
         ViewBag.id = idPlan;
         ViewBag.logged = true;
         ViewBag.plan = BD.GetPlan(idPlan);
+        ViewBag.folders = BD.GetFolders(user.id);
         return View();
     }
 

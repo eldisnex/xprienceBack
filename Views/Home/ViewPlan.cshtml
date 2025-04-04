@@ -12,6 +12,22 @@
     <br>
     <a class="button notBefore" id="copy"
             href='@Url.Action("EndPlan", new { id = ViewBag.id })'>Share</a>
+    <br><br><br>
+    @foreach (Folder folder in ViewBag.folders)
+    {
+        <a href='@Url.Action("ViewFolder", new { idFolder = folder.id })' style="all:unset; cursor:pointer;">
+            <div class="folder">
+                <div class="imgContainer">
+                    
+                </div>
+                <h2>@(folder.name.Length < 15 ? @folder.name : @folder.name.Substring(0, 15) + "...")</h2>
+            </div>
+        </a>
+        <form action="/Home/AddToFolder" method="POST">
+            <input name="plan" value="@ViewBag.id" hidden>
+            <button type="submit" name="idFolder" class="button notBefore addFolder" value="@folder.id" >Add to folder</button>
+        </form>
+    }
     </div>
     <h1>@ViewBag.plan.name</h1>
 

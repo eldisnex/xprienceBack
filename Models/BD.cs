@@ -135,7 +135,7 @@ public static class BD
         List<Folder> listFolders = null;
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "SELECT Folder.* FROM Folder INNER JOIN FolderPlan ON Folder.id = FolderPlan.idFolder INNER JOIN PlanUser ON PlanUser.id = FolderPlan.idPlan WHERE idUser = @pId";
+            string sql = "SELECT Folder.* FROM Folder INNER JOIN FolderPlan ON Folder.id = FolderPlan.idFolder INNER JOIN PlanUser ON PlanUser.id = FolderPlan.idPlan WHERE idUser = @pId GROUP BY Folder.id, Folder.name";
             listFolders = db.Query<Folder>(sql, new { pId = userId }).ToList();
         }
         return listFolders;
