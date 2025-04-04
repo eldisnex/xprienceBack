@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99c62935d06466439c80724067d6ab6ce804beb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8226b462c5226111792149e26f889ea0e16445d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Xprience")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
