@@ -1,14 +1,17 @@
 <section class="receivePlan">
+    <div></div>
     <div>
         <h1 class="createTitle">Share your <span class="xColored">plans</span>!</h1>
-        <img src="~/img/end.png" width="300" alt="">
+        <img src="~/img/end.png" width="400" alt="">
     </div>
     <div>
         <img src="@ViewBag.qr" alt="" class="qr">
         <br>
-        <a href="@ViewBag.qr" class="button notBefore" id="save" target="_blank" download="qr_code.png">Save</a>
-        <button class="button" id="copy"
-            onclick="navigator.clipboard.writeText(location.origin + '@ViewBag.link')">Copy</button>
+        <div style="display:flex; justify-content: center; gap: 20px;margin-top: 20px;">
+            <a href="@ViewBag.qr" class="button notBefore" id="save" target="_blank" download="qr_code.png">Save</a>
+            <button class="button" id="copy"
+                onclick="navigator.clipboard.writeText(location.origin + '@ViewBag.link')">Copy</button>
+        </div>
     </div>
 </section>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

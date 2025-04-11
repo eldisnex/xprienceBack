@@ -164,6 +164,7 @@ main section.box.col {
 main section.box h1 {
    font-size: 3.5em;
    font-weight: 800;
+   margin-bottom: 10px;
 }
 
 main section.box p {

@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="~/css/chart.css">
 <section class="flexSection">
-    <div class="points">
-        <h1>Welcome <span class="xColored">@ViewBag.user.username</span></h1>
-        <p>Come tomorrow to not lose the streak!</p>
+    <div class="points" style="flex-grow: 2; margin-right: 20px;">
+        <h1 style="text-align: center;">Welcome <span class="xColored">@ViewBag.user.username</span></h1>
+        <p style="text-align: center; font-size: 1.5em; font-weight: 600;">Come tomorrow to not lose the streak!</p>
         <div class="item html">
             <h2>2 days</h2>
             <svg width="160" height="160" xmlns="http://www.w3.org/2000/svg">
@@ -15,7 +15,7 @@
         </div>
     </div>
     <div>
-        <h4 class="rp">Categories</h4>
+        <!-- <h4 class="rp">Categories</h4> -->
         <div class="containerNowWidth" style="height: 500px; overflow-y: scroll;">
             <div class="card2 categorieCard notWidth">
                 <img src="~/img/cat3.png" alt="" />
