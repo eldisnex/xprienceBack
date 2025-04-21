@@ -53,7 +53,7 @@ const getHtmlFor = (year, month) => {
                      thisYear === actualYear &&
                      actualMonth === thisMonth &&
                      today === day + 1
-                        ? 'style="border: 1px solid blue;"'
+                        ? 'style="border: 1px solid var(--colorX);"'
                         : ''
                   } >${day + 1}</li>`
             )

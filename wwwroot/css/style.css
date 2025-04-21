@@ -3,20 +3,24 @@
 :root {
    --radius1: 20px;
    --radius2: 10px;
-   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
    --color1: #f5f5f5;
    --colorX: #38bd7d;
+   --white: #fff;
+   --black: #000;
+   --shadow-color: rgba(100, 100, 111, 0.2);
+   --shadow: var(--shadow-color) 0px 7px 29px 0px;
    --pageW: 70%;
 }
 
 * {
    font-family: 'Nunito Sans';
-   /* font-family: 'Uber Move Text', sans-serif; */
+   transition: background-color 0.3s;
 }
 
 body {
    margin: 0;
    overflow-x: hidden;
+   background-color: var(--white);
 }
 
 header {
@@ -51,6 +55,7 @@ header nav ul li {
 
 header nav ul li a {
    all: unset;
+   color: var(--black);
    background: linear-gradient(
          to right,
          rgba(100, 200, 200, 0),
@@ -100,7 +105,7 @@ header:has(button:focus) + .floatingNav,
    width: 200px;
    border-radius: var(--radius1);
    box-shadow: var(--shadow);
-   background-color: white;
+   background-color: var(--white);
    padding: 20px 10px;
    display: none;
    z-index: 1;
@@ -120,7 +125,7 @@ header:has(button:focus) + .floatingNav,
    border-radius: var(--radius1);
    margin-left: 10px;
    width: 60%;
-   background-color: white;
+   background-color: var(--white);
    color: black;
    text-decoration: none;
 }
@@ -152,7 +157,7 @@ main section.box {
    width: var(--pageW);
    padding: 10px 20px;
    min-height: 50vh;
-   background-color: white;
+   background-color: var(--white);
    box-shadow: var(--shadow);
    border-radius: var(--radius2);
 }
@@ -171,13 +176,21 @@ main section.box p {
    width: 50%;
 }
 
+h1,
+h2,
+h3,
+h4,
+p {
+   color: var(--black);
+}
+
 .button {
    all: unset;
    padding: 0.5em 2em;
    font-weight: 700;
    font-size: 1.2em;
    background-color: var(--colorX);
-   color: white;
+   color: var(--white);
    box-shadow: var(--shadow);
    border-radius: var(--radius2);
    cursor: pointer;
@@ -211,11 +224,11 @@ a.button.next::after {
 }
 
 a.button.next:hover::after {
-   color: white;
+   color: var(--white);
 }
 
 a.button:not(.notBefore):hover::before {
-   color: white;
+   color: var(--white);
 }
 
 a.button2 {
@@ -429,7 +442,6 @@ section.block {
 .rp {
    width: var(--pageW);
    text-align: left;
-   color: #000000aa;
 }
 
 .filters .subDiv * {
@@ -508,8 +520,14 @@ section.block {
    font-weight: lighter;
    margin: 0;
 }
+
+.card span.stars{
+   color: var(--black);
+}
+
 .card span.stars::before {
    content: '★';
+   color: var(--black);
 }
 
 .card p {
@@ -616,6 +634,11 @@ section.block {
 .createTitle {
    font-size: 3em;
    text-align: center;
+   color: black;
+}
+
+.receivePlan .createTitle{
+   color: var(--black);
 }
 
 .block.create {
@@ -857,6 +880,8 @@ main div.card2 img {
 .receiveTime {
    border: none;
    outline: none;
+   color: var(--black);
+   background-color: var(--white);
 }
 
 .nextButtonAnim {
@@ -899,6 +924,10 @@ main div.card2 img {
 
 .calendar {
    width: var(--pageW);
+}
+
+.calendar *{
+   color: var(--black);
 }
 
 .calendar h1 {
@@ -1164,4 +1193,37 @@ section.flexSection {
    margin: 0.83em 0;
    font-weight: bold;
    unicode-bidi: isolate;
+}
+
+/* ---- Modo oscuro ---- */
+
+#changeTheme {
+   display: none;
+}
+
+#sun,
+#moon {
+   user-select: none;
+}
+
+#sun {
+   display: none;
+}
+
+#moon {
+   display: initial;
+}
+
+#changeTheme:checked + label[for='changeTheme'] #sun {
+   display: initial;
+}
+
+#changeTheme:checked + label[for='changeTheme'] #moon {
+   display: none;
+}
+
+label[for='changeTheme'] {
+   position: absolute;
+   right: 10px;
+   top: 10px;
 }
