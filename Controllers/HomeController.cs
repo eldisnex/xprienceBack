@@ -322,7 +322,7 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult configurationProfile()
+    public IActionResult Settings()
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
@@ -331,41 +331,16 @@ public class HomeController : Controller
         ViewBag.user = user;
         return View();
     }
-    public IActionResult configurationConfiguration()
-    {
-        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
-        if (user == null)
-            return RedirectToAction("LogIn");
-        ViewBag.logged = true;
-        ViewBag.user = user;
-        return View();
-    }
-    public IActionResult configurationNoti()
-    {
-        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
-        if (user == null)
-            return RedirectToAction("LogIn");
-        ViewBag.logged = true;
-        ViewBag.user = user;
-        return View();
-    }
-    public IActionResult configurationLang()
-    {
-        User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
-        if (user == null)
-            return RedirectToAction("LogIn");
-        ViewBag.logged = true;
-        ViewBag.user = user;
-        return View();
-    }
+
     public IActionResult ChangeUsername(string userChanged)
     {
         User? user = BD.GetUserByCookie(Request.Cookies["UserId"]);
         if (user == null)
             return RedirectToAction("LogIn");
         ViewBag.logged = true;
-        BD.ChangeUsername(userChanged);
-        return View();
+        BD.ChangeUsername(userChanged, user.cookie);
+        Console.WriteLine("Here");
+        return Json(new { });
     }
     public IActionResult ChangeMail(string mailChanged)
     {
@@ -373,7 +348,7 @@ public class HomeController : Controller
         if (user == null)
             return RedirectToAction("LogIn");
         ViewBag.logged = true;
-        BD.ChangeMail(mailChanged);
+        BD.ChangeMail(mailChanged, user.cookie);
         return View();
     }
 

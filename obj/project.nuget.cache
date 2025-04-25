@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "S+37OmY8IKMErMBw86jtR7rsajsSa33H57LT7tltAcjz3FvAgvi0JZCQ5JEFJcn44zNa6YMuAsMJwo4sp7vnGg==",
+  "dgSpecHash": "PL3nNvahbJg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\48674459\\Desktop\\uhiyi\\Xprience.csproj",
+  "projectFilePath": "C:\\Users\\48674459\\Downloads\\jhgv\\xprienceBack\\Xprience.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\48674459\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\48674459\\.nuget\\packages\\jobject\\1.0.0\\jobject.1.0.0.nupkg.sha512",

@@ -168,21 +168,21 @@ public static class BD
         return p;
     }
 
-    public static void ChangeUsername(string userChanged)
+    public static void ChangeUsername(string userChanged, string? cookie)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "UPDATE Users SET @puserChanged = username";
-            db.Execute(sql, new { puserChanged = userChanged });
+            string sql = "UPDATE Users SET username = @puserChanged WHERE cookie = @pCookie";
+            db.Execute(sql, new { puserChanged = userChanged, pCookie = cookie });
         }
     }
 
-    public static void ChangeMail(string mailChanged)
+    public static void ChangeMail(string mailChanged, string? cookie)
     {
         using (SqlConnection db = new SqlConnection(_connectionString))
         {
-            string sql = "UPDATE Users SET @pmailChanged = mail";
-            db.Execute(sql, new { pmailChanged = mailChanged });
+            string sql = "UPDATE Users SET mail = @pmailChanged WHERE cookie = @pCookie";
+            db.Execute(sql, new { pmailChanged = mailChanged, pCookie = cookie });
         }
     }
 

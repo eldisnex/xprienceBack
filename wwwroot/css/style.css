@@ -197,6 +197,10 @@ p {
    transition: all 0.3s;
 }
 
+.button.red {
+   background-color: red;
+}
+
 .button:hover {
    filter: brightness(0.9);
 }
@@ -521,7 +525,7 @@ section.block {
    margin: 0;
 }
 
-.card span.stars{
+.card span.stars {
    color: var(--black);
 }
 
@@ -637,7 +641,7 @@ section.block {
    color: black;
 }
 
-.receivePlan .createTitle{
+.receivePlan .createTitle {
    color: var(--black);
 }
 
@@ -926,7 +930,7 @@ main div.card2 img {
    width: var(--pageW);
 }
 
-.calendar *{
+.calendar * {
    color: var(--black);
 }
 
@@ -1226,4 +1230,13 @@ label[for='changeTheme'] {
    position: absolute;
    right: 10px;
    top: 10px;
+}
+
+/* ---- settings ---- */
+.settingInput {
+   outline: none;
+   border-radius: var(--radius1);
+   padding: 5px;
+   box-shadow: var(--shadow);
+   width: 150px;
 }

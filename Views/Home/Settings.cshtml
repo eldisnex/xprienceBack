@@ -1,0 +1,35 @@
+<section class="box imgbg col">
+   <div style="width: 50%; display:flex;flex-direction: column;">
+      <p class="error"></p>
+      <p>Change username</p>
+      <input type="text" value="@ViewBag.user.username" class="settingInput" id="username" />
+      <p>Change mail</p>
+      <input type="mail" value="@ViewBag.user.mail" class="settingInput" id="mail" />
+      <br>
+      <button class="button red" style="font-size: 1em; width: 150px; text-align: center;">Delete account</button>
+   </div>
+   <link rel="stylesheet" href="~/css/profilecard.css" asp-append-version="true" />
+   <div class="profilecard">
+      <div class="banner">
+         <img
+               src="https://t4.ftcdn.net/jpg/03/49/49/79/360_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.webp"
+               alt="user" class="user" />
+      </div>
+      <h2 class="name" style="margin-top: 50px;">@ViewBag.user.username</h2>
+      <div class="title">@ViewBag.user.mail</div>
+      <div class="actions">
+         <div class="follow-info">
+            <h2><a href="#"><span>0</span><small>Liked</small></a></h2>
+            <h2><a href="#"><span>0</span><small>Folders</small></a></h2>
+         </div>
+         <div class="follow-btn">
+            <button>Follow</button>
+         </div>
+      </div>
+   </div>
+</section>
+<script>
+   const CHANGE_USERNAME_URL = '@Url.Action("ChangeUsername")'
+   const CHANGE_MAIL_URL = '@Url.Action("ChangeMail")'
+</script>
+<script src="~/js/update.js" ></script>
